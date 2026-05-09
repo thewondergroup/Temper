@@ -290,7 +290,7 @@
     max-width: 760px;
   }
   @media (max-width: 1024px) {
-    .hero__text { padding: 60px 28px 70px; }
+    .hero__text { padding: 28px 28px 60px; }
   }
 
   .hero__media {
@@ -300,12 +300,11 @@
     min-height: 100vh;
   }
   @media (max-width: 1024px) {
-    /* on mobile: video sits at top and dominates initial viewport.
-       70svh keeps it tall but lets a sliver of the title peek into view
-       on initial load so the user knows to scroll */
+    /* on mobile: video sits at top but leaves room for the title to be
+       visible on landing — 55svh ensures the headline reads above the fold */
     .hero__media {
       min-height: 0;
-      height: 70svh;
+      height: 55svh;
       aspect-ratio: auto;
     }
   }
@@ -387,6 +386,9 @@
     margin-bottom: 36px;
     opacity: 0;
     animation: rise 1s ease-out 0.3s forwards;
+  }
+  @media (max-width: 1024px) {
+    .hero__eyebrow { margin-bottom: 20px; }
   }
   .hero__eyebrow::before {
     content: '';
