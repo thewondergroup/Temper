@@ -291,7 +291,14 @@
     max-width: 760px;
   }
   @media (max-width: 1024px) {
-    .hero__text { padding: 28px 28px 60px; }
+    /* pull text up to overlap the video's fade-to-black region so the writing
+       sits cleanly on the dark gradient while video still feels expansive */
+    .hero__text {
+      padding: 28px 28px 60px;
+      margin-top: -28svh;
+      position: relative;
+      z-index: 4;
+    }
     /* on mobile: title → CTAs → description (CTAs sit right below the headline
        so booking is visible on landing without scrolling) */
     .hero__text .hero__eyebrow { order: 1; }
@@ -310,11 +317,12 @@
     min-height: 100vh;
   }
   @media (max-width: 1024px) {
-    /* on mobile: video sits at top but leaves room for the title to be
-       visible on landing — 55svh ensures the headline reads above the fold */
+    /* on mobile: video dominates the viewport, fading to black at the bottom.
+       Text sits on top of the faded zone so the writing reads against pure black
+       while the video still feels expansive */
     .hero__media {
       min-height: 0;
-      height: 55svh;
+      height: 88svh;
       aspect-ratio: auto;
     }
   }
@@ -352,16 +360,19 @@
     pointer-events: none;
     z-index: 3;
   }
-  /* on mobile, switch to a bottom-fade so the video transitions cleanly into
-     the text section underneath, without darkening the left edge unnecessarily */
+  /* on mobile: stronger bottom fade so the lower portion of the video
+     fades to full charcoal, providing a clean canvas for the overlapping text */
   @media (max-width: 1024px) {
     .hero__media::before {
       background:
         linear-gradient(180deg,
-          rgba(8,7,10,0.35) 0%,
-          rgba(8,7,10,0.0) 20%,
-          rgba(8,7,10,0.0) 60%,
-          rgba(8,7,10,0.85) 100%);
+          rgba(8,7,10,0.25) 0%,
+          rgba(8,7,10,0.0) 15%,
+          rgba(8,7,10,0.0) 38%,
+          rgba(8,7,10,0.55) 52%,
+          rgba(8,7,10,0.92) 65%,
+          rgba(8,7,10,1) 75%,
+          rgba(8,7,10,1) 100%);
     }
   }
   .hero__media::after {
