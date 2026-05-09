@@ -535,41 +535,49 @@
   .marquee {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    padding: 32px 0;
+    padding: 28px 0;
     overflow: hidden;
     background: var(--char-deep);
     position: relative;
   }
   .marquee__track {
     display: flex;
-    gap: 80px;
+    align-items: center;
+    gap: 48px;
     white-space: nowrap;
-    animation: scroll 25s linear infinite;
+    width: max-content;
+    animation: scroll 30s linear infinite;
     font-family: var(--display);
     font-style: italic;
     font-weight: 300;
-    font-size: clamp(40px, 6vw, 80px);
+    font-size: clamp(32px, 5vw, 64px);
     color: var(--cream);
     letter-spacing: -0.02em;
   }
   .marquee__track span {
     display: inline-flex;
     align-items: center;
-    gap: 80px;
+    gap: 48px; /* matches outer gap so ✦ separators are evenly spaced */
   }
   .marquee__track span::after {
     content: '✦';
     color: var(--ember);
-    font-size: 0.45em;
+    font-size: 0.4em;
     font-style: normal;
   }
   @keyframes scroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
-  /* mobile: speed it up — narrower viewport makes the same duration feel slower */
+  /* mobile: faster + smaller text so more phrases stream past per second */
   @media (max-width: 768px) {
-    .marquee__track { animation-duration: 14s; }
+    .marquee { padding: 20px 0; }
+    .marquee__track {
+      animation-duration: 18s;
+      gap: 32px;
+      font-size: 28px;
+    }
+    .marquee__track span { gap: 32px; }
   }
 
   /* ───── sections ───────────── */
@@ -1519,10 +1527,14 @@
     <span>28-day dry-aged</span>
     <span>Cornish lobster</span>
     <span>Hand-shucked oysters</span>
+    <span>Ninety minutes</span>
+    <span>Free-flowing</span>
     <span>Cooked over fire</span>
     <span>28-day dry-aged</span>
     <span>Cornish lobster</span>
     <span>Hand-shucked oysters</span>
+    <span>Ninety minutes</span>
+    <span>Free-flowing</span>
   </div>
 </div>
 
