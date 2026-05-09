@@ -567,6 +567,10 @@
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
+  /* mobile: speed it up — narrower viewport makes the same duration feel slower */
+  @media (max-width: 768px) {
+    .marquee__track { animation-duration: 14s; }
+  }
 
   /* ───── sections ───────────── */
   .section {
