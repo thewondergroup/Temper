@@ -159,9 +159,9 @@
     left: 0;
     right: 0;
     z-index: 49; /* sits below main nav */
-    background: rgba(8, 7, 10, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(8, 7, 10, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--ember);
     transform: translateY(-110%);
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -209,6 +209,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    white-space: nowrap;
   }
   .sticky-book__btn--ghost {
     border-color: var(--cream);
@@ -239,19 +240,25 @@
   /* mobile: hide label, just show two compact CTAs */
   @media (max-width: 768px) {
     .sticky-book__inner {
-      padding: 10px 14px;
+      padding: 8px 12px;
       justify-content: flex-end;
-      gap: 8px;
+      gap: 6px;
     }
     .sticky-book__label { display: none; }
     .sticky-book__btn {
       flex: 1;
-      padding: 10px 8px;
+      padding: 9px 6px;
       font-size: 9px;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       justify-content: center;
+      gap: 6px;
     }
-    .sticky-book__price { font-size: 13px; }
+    .sticky-book__price { font-size: 12px; }
+  }
+
+  /* anchor links should account for the sticky bar height when scrolling */
+  section[id], div[id] {
+    scroll-margin-top: 70px;
   }
 
   /* ───── hero (image-led split) ─────────── */
@@ -264,7 +271,13 @@
     overflow: hidden;
   }
   @media (max-width: 1024px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero {
+      grid-template-columns: 1fr;
+      grid-template-areas: "media" "text";
+      min-height: auto;
+    }
+    .hero__media { grid-area: media; }
+    .hero__text  { grid-area: text; }
   }
 
   .hero__text {
@@ -277,7 +290,7 @@
     max-width: 760px;
   }
   @media (max-width: 1024px) {
-    .hero__text { padding: 130px 28px 60px; }
+    .hero__text { padding: 60px 28px 70px; }
   }
 
   .hero__media {
@@ -287,7 +300,14 @@
     min-height: 100vh;
   }
   @media (max-width: 1024px) {
-    .hero__media { min-height: 70vh; aspect-ratio: 4/5; }
+    /* on mobile: video sits at top and dominates initial viewport.
+       70svh keeps it tall but lets a sliver of the title peek into view
+       on initial load so the user knows to scroll */
+    .hero__media {
+      min-height: 0;
+      height: 70svh;
+      aspect-ratio: auto;
+    }
   }
   .hero__media img,
   .hero__media video {
@@ -322,6 +342,18 @@
       radial-gradient(circle at 70% 50%, rgba(217, 74, 28, 0.15) 0%, transparent 60%);
     pointer-events: none;
     z-index: 3;
+  }
+  /* on mobile, switch to a bottom-fade so the video transitions cleanly into
+     the text section underneath, without darkening the left edge unnecessarily */
+  @media (max-width: 1024px) {
+    .hero__media::before {
+      background:
+        linear-gradient(180deg,
+          rgba(8,7,10,0.35) 0%,
+          rgba(8,7,10,0.0) 20%,
+          rgba(8,7,10,0.0) 60%,
+          rgba(8,7,10,0.85) 100%);
+    }
   }
   .hero__media::after {
     content: '';
@@ -662,33 +694,32 @@
     mix-blend-mode: screen;
   }
 
-  /* PREMIUM RIBBON — diagonal corner ribbon on the £80 card */
+  /* PREMIUM BADGE — pulsing ember pill on the £80 card */
   .board__badge {
     position: absolute;
-    top: 28px;
-    right: -42px;
+    top: 20px;
+    right: 20px;
     z-index: 5;
     font-family: var(--mono);
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.28em;
     color: var(--char-deep);
     background: var(--ember);
-    padding: 9px 50px;
-    font-weight: 600;
-    transform: rotate(35deg);
-    transform-origin: center;
-    box-shadow: 0 6px 24px rgba(217, 74, 28, 0.6);
-    animation: badge-pulse 2.8s ease-in-out infinite;
+    padding: 8px 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 20px rgba(217, 74, 28, 0.5);
+    animation: badge-pulse 2.6s ease-in-out infinite;
+    white-space: nowrap;
   }
   .board__badge::before {
-    content: '★';
-    margin-right: 8px;
+    content: '★ ';
     font-size: 10px;
+    margin-right: 2px;
   }
   @keyframes badge-pulse {
-    0%, 100% { box-shadow: 0 6px 24px rgba(217, 74, 28, 0.5); }
-    50%      { box-shadow: 0 8px 36px rgba(255, 106, 44, 0.85); }
+    0%, 100% { box-shadow: 0 4px 20px rgba(217, 74, 28, 0.5); transform: scale(1); }
+    50%      { box-shadow: 0 6px 30px rgba(255, 106, 44, 0.85); transform: scale(1.04); }
   }
 
   /* card body wrapper — proper padding starts here, below the photo */
@@ -701,9 +732,10 @@
     .board__body { padding: 28px 28px 0; }
     .board__hero { aspect-ratio: 16 / 9; }
     .board__badge {
-      top: 18px;
-      right: -36px;
-      padding: 6px 42px;
+      top: 14px;
+      right: 14px;
+      transform: none;
+      padding: 7px 12px;
       font-size: 9px;
       letter-spacing: 0.22em;
     }
@@ -796,7 +828,7 @@
   .drinks__item--upgrade::before {
     content: '';
     position: absolute;
-    left: -22px;
+    left: -16px;
     top: 0.6em;
     width: 9px;
     height: 9px;
@@ -830,22 +862,28 @@
   .course--upgrade .course__name em {
     color: var(--ember);
   }
-  /* subtle 'INCLUDED' tag on upgrade items */
+  /* '+ Lobster' / '+ Cocktails' inline tag — kept visible on mobile too */
   .upgrade-tag {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 8px;
     font-family: var(--mono);
     font-size: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     color: var(--ember);
     border: 1px solid var(--ember);
     padding: 2px 6px;
     vertical-align: middle;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    white-space: nowrap;
   }
   @media (max-width: 480px) {
-    .upgrade-tag { display: none; }
+    .upgrade-tag {
+      font-size: 7px;
+      padding: 1px 5px;
+      letter-spacing: 0.18em;
+      margin-left: 6px;
+    }
   }
 
   .board__cta {
@@ -1021,12 +1059,9 @@
     padding-top: 24px;
   }
   .features li {
-    padding: 14px 0;
+    padding: 14px 0 14px 40px;
     border-bottom: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: 24px 1fr;
-    gap: 16px;
-    align-items: baseline;
+    position: relative;
     font-size: 15px;
     color: var(--cream);
     line-height: 1.5;
@@ -1035,6 +1070,9 @@
     content: '✦';
     color: var(--ember);
     font-size: 11px;
+    position: absolute;
+    left: 0;
+    top: 18px;
   }
   .features__note {
     color: var(--ember);
@@ -1042,16 +1080,7 @@
     font-family: var(--display);
     font-weight: 300;
     margin-left: 6px;
-    white-space: nowrap;
     font-size: 0.95em;
-  }
-  @media (max-width: 480px) {
-    .features__note {
-      display: block;
-      margin-left: 0;
-      margin-top: 4px;
-      white-space: normal;
-    }
   }
 
   /* ───── gallery ──────────────────────── */
@@ -1425,7 +1454,7 @@
         <span class="sticky-book__price">£70</span>
       </a>
       <a class="sticky-book__btn sticky-book__btn--ember" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718858&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Book with Lobster</span>
+        <span>Book + Lobster</span>
         <span class="sticky-book__price">£80</span>
       </a>
     </div>
@@ -1450,11 +1479,11 @@
 
     <div class="hero__ctas">
       <a class="btn btn--ember" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718262&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Surf &amp; Turf</span>
+        <span>Book Surf &amp; Turf</span>
         <span class="btn__price">£70</span>
       </a>
       <a class="btn btn--ghost" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718858&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Add Lobster</span>
+        <span>Book with Lobster</span>
         <span class="btn__price">£80</span>
       </a>
     </div>
@@ -1698,11 +1727,11 @@
 
     <div class="reserve__ctas reveal reveal--delay-3">
       <a class="btn btn--ember" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718262&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Book the Surf &amp; Turf</span>
+        <span>Book Surf &amp; Turf</span>
         <span class="btn__price">£70</span>
       </a>
       <a class="btn btn--ghost" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718858&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Add the Lobster</span>
+        <span>Book with Lobster</span>
         <span class="btn__price">£80</span>
       </a>
     </div>
