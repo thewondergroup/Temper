@@ -419,11 +419,13 @@
     color: var(--ember);
     font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
   }
-  .hero__title .word:nth-child(1) { animation-delay: 0.5s; }
-  .hero__title .word:nth-child(2) { animation-delay: 0.62s; }
-  .hero__title .word:nth-child(3) { animation-delay: 0.74s; }
-  .hero__title .word:nth-child(4) { animation-delay: 0.86s; }
-  .hero__title .word:nth-child(5) { animation-delay: 0.98s; }
+  /* stagger the 5 words — using both nth-child and nth-of-type guards
+     against the <br> being counted */
+  .hero__title .word:nth-of-type(1) { animation-delay: 0.5s; }
+  .hero__title .word:nth-of-type(2) { animation-delay: 0.62s; }
+  .hero__title .word:nth-of-type(3) { animation-delay: 0.74s; }
+  .hero__title .word:nth-of-type(4) { animation-delay: 0.86s; }
+  .hero__title .word:nth-of-type(5) { animation-delay: 0.98s; }
 
   @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
@@ -788,7 +790,7 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: 4px;
+    bottom: -8px;
     height: 4px;
     width: 100%;
     background: linear-gradient(90deg, var(--ember) 0%, var(--ember-bright) 50%, transparent 100%);
@@ -1483,8 +1485,9 @@
     <h1 class="hero__title">
       <span class="word">Lobster</span>
       <span class="word">&amp;</span>
-      <span class="word">Steak,</span><br>
-      <span class="word word--accent">Bottomless.</span>
+      <span class="word">Steak</span><br>
+      <span class="word word--accent">Bottomless</span>
+      <span class="word word--accent">Brunch</span>
     </h1>
 
     <p class="hero__lede">
