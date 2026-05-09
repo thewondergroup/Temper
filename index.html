@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Lobster &amp; Steak Bottomless Brunch · temper City</title>
 <meta name="description" content="The best bottomless brunch in the City of London. Surf and turf cooked over fire. Ninety minutes of free-flowing wine, beer and cocktails. Saturdays and Sundays at temper City." />
 
@@ -79,9 +79,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 22px 40px;
-    background: linear-gradient(to bottom, rgba(8,7,10,0.92), rgba(8,7,10,0));
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    padding-top: calc(22px + env(safe-area-inset-top));
+    background: linear-gradient(to bottom, rgba(8,7,10,0.96), rgba(8,7,10,0.4));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     transition: background 0.3s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
   }
   .nav.scrolled {
@@ -92,6 +93,7 @@
     transform: translateY(-110%);
     opacity: 0;
     pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 1, 1), opacity 0.2s ease;
   }
   .nav__brand {
     display: inline-flex;
@@ -158,11 +160,10 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 49; /* sits below main nav */
-    background: rgba(8, 7, 10, 0.92);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    z-index: 49;
+    background: rgb(8, 7, 10);
     border-bottom: 1px solid var(--ember);
+    padding-top: env(safe-area-inset-top);
     transform: translateY(-110%);
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
@@ -372,6 +373,75 @@
   @keyframes ember-flicker {
     0%, 100% { opacity: 0.85; }
     50%      { opacity: 1.0; }
+  }
+
+  /* MOBILE-ONLY floating CTAs pinned to the bottom of the video.
+     Hidden on desktop where the side-panel CTAs handle booking. */
+  .hero__media-ctas {
+    display: none;
+  }
+  @media (max-width: 1024px) {
+    .hero__media-ctas {
+      display: flex;
+      gap: 8px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 5;
+      padding: 60px 18px 18px;
+      background: linear-gradient(to top,
+        rgba(8, 7, 10, 0.92) 0%,
+        rgba(8, 7, 10, 0.7) 40%,
+        rgba(8, 7, 10, 0) 100%);
+      pointer-events: none; /* the gradient itself isn't clickable, only the buttons */
+    }
+    .hero__media-cta {
+      pointer-events: auto;
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 12px;
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .hero__media-cta--ember {
+      background: var(--ember);
+      border-color: var(--ember);
+      color: var(--char-deep);
+      box-shadow: 0 8px 24px -4px rgba(217, 74, 28, 0.5);
+    }
+    .hero__media-cta--ember:active {
+      background: var(--ember-bright);
+      transform: scale(0.97);
+    }
+    .hero__media-cta--ghost {
+      background: rgba(8, 7, 10, 0.55);
+      border-color: var(--cream);
+      color: var(--cream);
+    }
+    .hero__media-cta--ghost:active {
+      background: var(--cream);
+      color: var(--char-deep);
+      transform: scale(0.97);
+    }
+    .hero__media-cta-price {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
   }
 
   .hero__eyebrow {
@@ -1518,6 +1588,18 @@
       aria-hidden="true">
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
+    <!-- mobile-only floating CTAs pinned to the bottom of the video,
+         so booking is one tap away the moment the page loads -->
+    <div class="hero__media-ctas" aria-label="Book bottomless brunch">
+      <a class="hero__media-cta hero__media-cta--ember" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718262&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
+        <span>Book Surf &amp; Turf</span>
+        <span class="hero__media-cta-price">£70</span>
+      </a>
+      <a class="hero__media-cta hero__media-cta--ghost" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718858&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
+        <span>+ Lobster</span>
+        <span class="hero__media-cta-price">£80</span>
+      </a>
+    </div>
   </div>
 
   <div class="scroll-cue">Scroll · The Menu</div>
