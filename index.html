@@ -3,2001 +3,1843 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Lobster &amp; Steak Bottomless Brunch · temper City</title>
-<meta name="description" content="The best bottomless brunch in the City of London. Surf and turf cooked over fire. Ninety minutes of free-flowing wine, beer and cocktails. Saturdays and Sundays at temper City." />
+<meta name="theme-color" content="#08070a" />
 
-<meta property="og:title" content="Lobster &amp; Steak Bottomless Brunch · temper City" />
-<meta property="og:description" content="Two boards. Ninety minutes. Cooked over fire in the heart of the City." />
-<meta property="og:image" content="assets/full-spread.jpg" />
-<meta property="og:type" content="article" />
+<title>temper — Open Fire Steakhouse, BBQ &amp; Tacos · London Soho &amp; City</title>
+<meta name="description" content="Open-fire steakhouse and smokehouse BBQ in central London. Rare-breed beef, in-house butchery, smoky tacos and free-flowing brunches. Soho and the City, since 2016." />
+
+<meta property="og:title" content="temper — Open Fire Steakhouse, BBQ &amp; Tacos · London" />
+<meta property="og:description" content="Fire-cooked steaks, smoked meats, handmade tacos. Soho and the City." />
+<meta property="og:image" content="assets/fire-chef.jpg" />
+<meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=JetBrains+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-<link rel="preload" as="image" href="assets/hero-poster.jpg" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <style>
-  /* ───────────────────────────────────────────
-     temper · Lobster & Steak Bottomless Brunch
-     Editorial · Fire-led · City of London
-     ─────────────────────────────────────────── */
+:root {
+  --char-deep: #08070a;
+  --char-mid:  #14111a;
+  --char-soft: #1d1925;
+  --cream:     #f5ede0;
+  --cream-dim: rgba(245, 237, 224, 0.6);
+  --cream-mute: rgba(245, 237, 224, 0.4);
+  --ember:        #d94a1c;
+  --ember-bright: #ff6a2c;
+  --ember-deep:   #a82f0d;
+  --line:      rgba(245, 237, 224, 0.12);
+  --line-soft: rgba(245, 237, 224, 0.06);
 
-  :root {
-    --char-deep:    #08070a;
-    --char-mid:     #14110e;
-    --char-soft:    #1f1a14;
-    --cream:        #f5ede0;
-    --cream-dim:    #c9bfae;
-    --ember:        #d94a1c;
-    --ember-bright: #ff6a2c;
-    --blood:        #6b1a0e;
-    --gold:         #c9a063;
-    --line:         rgba(245, 237, 224, 0.12);
+  --display: 'Fraunces', 'Times New Roman', serif;
+  --body:    'Manrope', -apple-system, sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+}
 
-    --display: 'Fraunces', 'Times New Roman', serif;
-    --body:    'Manrope', 'Helvetica Neue', sans-serif;
-    --mono:    'JetBrains Mono', ui-monospace, monospace;
-  }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--char-deep);
+  color: var(--cream);
+  font-family: var(--body);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
 
-  body {
-    background: var(--char-deep);
-    color: var(--cream);
-    font-family: var(--body);
-    font-weight: 400;
-    line-height: 1.55;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
+::selection { background: var(--ember); color: var(--char-deep); }
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 100;
-    opacity: 0.06;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.65 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  }
+/* ───────────────────────────── NAV ───────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 40px;
+  padding-top: calc(22px + env(safe-area-inset-top));
+  background: linear-gradient(to bottom, rgba(8,7,10,0.92), rgba(8,7,10,0.0));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+.nav.scrolled {
+  background: rgba(8,7,10,0.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav__brand img { height: 26px; width: auto; }
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.nav__menu a { color: var(--cream-dim); transition: color 0.2s ease; }
+.nav__menu a:hover { color: var(--cream); }
+.nav__cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 10px 18px;
+  border: 1px solid var(--ember);
+  color: var(--ember);
+  transition: all 0.25s ease;
+}
+.nav__cta:hover {
+  background: var(--ember);
+  color: var(--char-deep);
+}
+.nav__burger { display: none; }
+@media (max-width: 900px) {
+  .nav { padding: 16px 22px; padding-top: calc(16px + env(safe-area-inset-top)); gap: 12px; }
+  .nav__menu { display: none; }
+  .nav__cta { padding: 9px 14px; font-size: 9px; letter-spacing: 0.16em; }
+  .nav__brand img { height: 22px; }
+}
+@media (max-width: 380px) {
+  .nav__cta { padding: 8px 12px; }
+  .nav__cta::after { content: 'Book'; }
+  .nav__cta span.full { display: none; }
+}
 
-  ::selection { background: var(--ember); color: var(--char-deep); }
-  a { color: inherit; text-decoration: none; }
-  img { display: block; max-width: 100%; height: auto; }
+/* ─────────────────────────── HERO ────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  overflow: hidden;
+}
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.hero__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg,
+      rgba(8,7,10,0.5) 0%,
+      rgba(8,7,10,0.25) 30%,
+      rgba(8,7,10,0.5) 65%,
+      rgba(8,7,10,0.95) 100%),
+    radial-gradient(ellipse at 30% 60%, rgba(217, 74, 28, 0.2) 0%, transparent 55%);
+  z-index: 1;
+}
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  padding: 0 60px 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100vh;
+}
+.hero__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  color: var(--ember);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: rise 1s ease-out 0.3s forwards;
+}
+.hero__eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--ember);
+}
+.hero__title {
+  font-family: var(--display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(56px, 9vw, 168px);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  margin-bottom: 36px;
+  max-width: 14ch;
+}
+.hero__title .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  font-style: normal;
+}
+.hero__title .word:nth-of-type(1) { animation-delay: 0.5s; }
+.hero__title .word:nth-of-type(2) { animation-delay: 0.65s; }
+.hero__title .word:nth-of-type(3) { animation-delay: 0.8s; font-style: italic; color: var(--ember); }
+.hero__lede {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.35;
+  max-width: 38ch;
+  margin-bottom: 44px;
+  color: var(--cream);
+  opacity: 0;
+  animation: rise 1s ease-out 1s forwards;
+}
+.hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: rise 1s ease-out 1.2s forwards;
+}
+@keyframes rise {
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  /* ───── nav ─────────────────────── */
-  .nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 40px;
-    padding-top: calc(22px + env(safe-area-inset-top));
-    background: linear-gradient(to bottom, rgba(8,7,10,0.96), rgba(8,7,10,0.4));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: background 0.3s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-  }
-  .nav.scrolled {
-    background: rgba(8,7,10,0.96);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav.is-hidden {
-    transform: translateY(-110%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 1, 1), opacity 0.2s ease;
-  }
-  .nav__brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--cream);
-  }
-  .nav__brand img {
-    height: 22px;
-    width: auto;
-    display: block;
-  }
-  .nav__brand-divider {
-    width: 1px;
-    height: 18px;
-    background: var(--line);
-  }
-  .nav__brand-city {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: 18px;
-    letter-spacing: 0.02em;
-    color: var(--ember);
-    font-variation-settings: "opsz" 144;
-  }
-  @media (max-width: 768px) {
-    .nav__brand img { height: 18px; }
-    .nav__brand-city { font-size: 15px; }
-    .nav__brand { gap: 10px; }
-    .nav__brand-divider { height: 14px; }
-  }
-  .nav__links {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--cream-dim);
-  }
-  .nav__links a { transition: color 0.2s ease; }
-  .nav__links a:hover { color: var(--ember); }
-  .nav__cta {
-    padding: 10px 20px;
-    border: 1px solid var(--ember);
-    color: var(--ember);
-    transition: all 0.25s ease;
-  }
-  .nav__cta:hover {
-    background: var(--ember);
-    color: var(--char-deep);
-  }
-  @media (max-width: 768px) {
-    .nav { padding: 18px 20px; }
-    .nav__links { display: none; }
-    .nav__cta { font-size: 10px; padding: 8px 14px; }
-  }
+.btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 18px 32px;
+  border: 1px solid;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn--ember {
+  background: var(--ember);
+  border-color: var(--ember);
+  color: var(--char-deep);
+  font-weight: 500;
+}
+.btn--ember:hover {
+  background: var(--ember-bright);
+  border-color: var(--ember-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -8px rgba(217, 74, 28, 0.6);
+}
+.btn--ghost {
+  background: transparent;
+  border-color: var(--cream);
+  color: var(--cream);
+}
+.btn--ghost:hover {
+  background: var(--cream);
+  color: var(--char-deep);
+  transform: translateY(-2px);
+}
+.btn__arrow { font-family: var(--body); font-size: 14px; transform: translateY(-1px); }
 
-  /* ───── sticky booking bar ──────────── */
-  .sticky-book {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 49;
-    background: rgb(8, 7, 10);
-    border-bottom: 1px solid var(--ember);
-    padding-top: env(safe-area-inset-top);
-    transform: translateY(-110%);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-  }
-  .sticky-book.is-visible {
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  .sticky-book__inner {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 14px 40px 14px 110px; /* leave room for the brand on the left */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
-  }
-  .sticky-book__label {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: 16px;
-    color: var(--cream);
-    margin-right: auto;
-    margin-left: 0;
-  }
-  .sticky-book__label em {
-    color: var(--ember);
-    font-style: italic;
-    font-weight: 400;
-  }
-  .sticky-book__ctas {
-    display: flex;
-    gap: 10px;
-  }
-  .sticky-book__btn {
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    padding: 11px 18px;
-    border: 1px solid;
-    transition: all 0.25s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    white-space: nowrap;
-  }
-  .sticky-book__btn--ghost {
-    border-color: var(--cream);
-    color: var(--cream);
-  }
-  .sticky-book__btn--ghost:hover {
-    background: var(--cream);
-    color: var(--char-deep);
-  }
-  .sticky-book__btn--ember {
-    background: var(--ember);
-    border-color: var(--ember);
-    color: var(--char-deep);
-  }
-  .sticky-book__btn--ember:hover {
-    background: var(--ember-bright);
-    border-color: var(--ember-bright);
-  }
-  .sticky-book__price {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0;
-    text-transform: none;
-  }
+/* Hero scroll cue */
+.scroll-cue {
+  position: absolute;
+  bottom: 32px;
+  left: 60px;
+  z-index: 3;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--cream-mute);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: rise 1s ease-out 1.6s forwards;
+}
+.scroll-cue::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--cream-mute);
+  animation: pulse-line 2.5s ease-in-out infinite;
+}
+@keyframes pulse-line {
+  0%, 100% { transform: scaleX(0.5); transform-origin: left; opacity: 0.3; }
+  50%      { transform: scaleX(1); opacity: 0.8; }
+}
 
-  /* mobile: hide label, just show two compact CTAs */
-  @media (max-width: 768px) {
-    .sticky-book__inner {
-      padding: 8px 12px;
-      justify-content: flex-end;
-      gap: 6px;
-    }
-    .sticky-book__label { display: none; }
-    .sticky-book__btn {
-      flex: 1;
-      padding: 9px 6px;
-      font-size: 9px;
-      letter-spacing: 0.12em;
-      justify-content: center;
-      gap: 6px;
-    }
-    .sticky-book__price { font-size: 12px; }
-  }
+@media (max-width: 900px) {
+  .hero__inner { padding: 0 28px 80px; }
+  .hero__title { letter-spacing: -0.02em; }
+  .hero__lede { font-size: 18px; margin-bottom: 32px; }
+  .hero__media img { object-position: center; }
+  .hero__ctas { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
+  .hero__ctas .btn { justify-content: space-between; padding: 17px 22px; }
+  .scroll-cue { left: 28px; bottom: 22px; font-size: 9px; }
+  .scroll-cue::after { width: 36px; }
+}
 
-  /* anchor links should account for the sticky bar height when scrolling */
-  section[id], div[id] {
-    scroll-margin-top: 70px;
-  }
+/* ───────────────────────── OFFER GRID ────────────────────────── */
+.offers {
+  background: var(--char-deep);
+  padding: 120px 60px;
+  position: relative;
+}
+.offers__intro {
+  margin-bottom: 64px;
+  max-width: 800px;
+}
+.offers__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.offers__eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--ember);
+}
+.offers__heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(36px, 4.8vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  max-width: 16ch;
+}
+.offers__heading em {
+  font-style: italic;
+  color: var(--ember);
+  font-feature-settings: 'WONK' 1;
+}
 
-  /* ───── hero (image-led split) ─────────── */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-    overflow: hidden;
-  }
-  @media (max-width: 1024px) {
-    .hero {
-      grid-template-columns: 1fr;
-      grid-template-areas: "media" "text";
-      min-height: auto;
-    }
-    .hero__media { grid-area: media; }
-    .hero__text  { grid-area: text; }
-  }
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.offer {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--char-mid);
+  cursor: pointer;
+  display: block;
+}
+.offer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(8,7,10,0) 0%,
+    rgba(8,7,10,0.15) 40%,
+    rgba(8,7,10,0.85) 100%);
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+.offer:hover::before {
+  background: linear-gradient(180deg,
+    rgba(8,7,10,0.1) 0%,
+    rgba(8,7,10,0.3) 40%,
+    rgba(8,7,10,0.9) 100%);
+}
+.offer__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.offer:hover .offer__img { transform: scale(1.06); }
+.offer__body {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.offer__tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--cream);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.offer__tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--ember);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--ember);
+}
+.offer__title {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(28px, 2.5vw, 38px);
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  margin-bottom: 10px;
+}
+.offer__title em {
+  font-style: italic;
+  color: var(--ember);
+}
+.offer__meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--cream-dim);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.offer__cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ember);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.3s ease;
+}
+.offer:hover .offer__cta { gap: 18px; }
+.offer__cta::after {
+  content: '→';
+  font-family: var(--body);
+  transition: transform 0.3s ease;
+}
 
-  .hero__text {
-    padding: 160px 60px 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    max-width: 760px;
-  }
-  @media (max-width: 1024px) {
-    /* pull text up to overlap the video's fade-to-black region so the writing
-       sits cleanly on the dark gradient while video still feels expansive */
-    .hero__text {
-      padding: 28px 28px 60px;
-      margin-top: -12svh;
-      position: relative;
-      z-index: 4;
-    }
-    /* on mobile: title → CTAs → description (CTAs sit right below the headline
-       so booking is visible on landing without scrolling) */
-    .hero__text .hero__eyebrow { order: 1; }
-    .hero__text .hero__title   { order: 2; }
-    .hero__text .hero__ctas    { order: 3; }
-    .hero__text .hero__lede    { order: 4; margin-bottom: 0; }
-    /* tighten spacing since CTAs now sit between title and lede */
-    .hero__text .hero__title { margin-bottom: 28px; }
-    .hero__text .hero__ctas { margin-bottom: 32px; }
-  }
-
-  .hero__media {
-    position: relative;
-    overflow: hidden;
-    background: var(--char-mid);
-    min-height: 100vh;
-  }
-  @media (max-width: 1024px) {
-    /* on mobile: video dominates the viewport, fading to black at the bottom.
-       Text sits on top of the faded zone so the writing reads against pure black
-       while the video still feels expansive */
-    .hero__media {
-      min-height: 0;
-      height: 88svh;
-      aspect-ratio: auto;
-    }
-  }
-  .hero__media img,
-  .hero__media video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-  /* poster img sits underneath, fades out once the video can play */
-  .hero__media img {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    transition: opacity 0.6s ease;
-  }
-  .hero__media video {
-    position: relative;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-  }
-  .hero__media.video-ready video { opacity: 1; }
-  .hero__media.video-ready img { opacity: 0; }
-  .hero__media::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(90deg, rgba(8,7,10,0.65) 0%, rgba(8,7,10,0.0) 35%),
-      linear-gradient(180deg, rgba(8,7,10,0.5) 0%, rgba(8,7,10,0.0) 30%, rgba(8,7,10,0.0) 70%, rgba(8,7,10,0.55) 100%),
-      radial-gradient(circle at 70% 50%, rgba(217, 74, 28, 0.15) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 3;
-  }
-  /* on mobile: stronger bottom fade so the lower portion of the video
-     fades to full charcoal, providing a clean canvas for the overlapping text */
-  @media (max-width: 1024px) {
-    .hero__media::before {
-      background:
-        linear-gradient(180deg,
-          rgba(8,7,10,0.25) 0%,
-          rgba(8,7,10,0.0) 12%,
-          rgba(8,7,10,0.0) 60%,
-          rgba(8,7,10,0.55) 72%,
-          rgba(8,7,10,0.92) 82%,
-          rgba(8,7,10,1) 88%,
-          rgba(8,7,10,1) 100%);
-    }
-  }
-  .hero__media::after {
-    content: '';
-    position: absolute;
-    bottom: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(217, 74, 28, 0.3) 0%, transparent 70%);
-    filter: blur(40px);
-    z-index: 2;
-    animation: ember-flicker 6s ease-in-out infinite;
-    pointer-events: none;
-    mix-blend-mode: screen;
-  }
-  @keyframes ember-flicker {
-    0%, 100% { opacity: 0.85; }
-    50%      { opacity: 1.0; }
-  }
-
-  .hero__eyebrow {
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.32em;
-    color: var(--ember);
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 36px;
-    opacity: 0;
-    animation: rise 1s ease-out 0.3s forwards;
-  }
-  @media (max-width: 1024px) {
-    .hero__eyebrow { display: none; }
-  }
-  .hero__eyebrow::before {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: var(--ember);
-  }
-
-  .hero__title {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(52px, 7.5vw, 124px);
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    color: var(--cream);
-    font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
-    margin-bottom: 40px;
-  }
-  .hero__title .word {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-  .hero__title .word--accent {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--ember);
-    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
-  }
-  /* stagger the 5 words — using both nth-child and nth-of-type guards
-     against the <br> being counted */
-  .hero__title .word:nth-of-type(1) { animation-delay: 0.5s; }
-  .hero__title .word:nth-of-type(2) { animation-delay: 0.62s; }
-  .hero__title .word:nth-of-type(3) { animation-delay: 0.74s; }
-  .hero__title .word:nth-of-type(4) { animation-delay: 0.86s; }
-  .hero__title .word:nth-of-type(5) { animation-delay: 0.98s; }
-
-  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
-
-  .hero__lede {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: clamp(18px, 1.6vw, 22px);
-    line-height: 1.45;
-    color: var(--cream);
-    max-width: 520px;
-    margin-bottom: 40px;
-    padding-top: 28px;
-    border-top: 1px solid var(--line);
-    opacity: 0;
-    animation: rise 1s ease-out 1.2s forwards;
-  }
-  .hero__lede em { color: var(--ember); font-style: italic; }
-
-  .hero__ctas {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: rise 1s ease-out 1.4s forwards;
-  }
-  @media (max-width: 480px) {
-    .hero__ctas { flex-direction: column; }
-  }
-
-  .btn {
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    padding: 18px 28px;
-    text-align: center;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
-    border: 1px solid;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    position: relative;
-    overflow: hidden;
-  }
-  .btn--ember {
-    background: var(--ember);
-    border-color: var(--ember);
-    color: var(--char-deep);
-  }
-  .btn--ember:hover {
-    background: var(--ember-bright);
-    border-color: var(--ember-bright);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px -8px rgba(217, 74, 28, 0.5);
-  }
-  .btn--ghost {
-    background: transparent;
-    border-color: var(--cream);
-    color: var(--cream);
-  }
-  .btn--ghost:hover {
-    background: var(--cream);
-    color: var(--char-deep);
-    transform: translateY(-2px);
-  }
-  .btn__price {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 16px;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-
-  .scroll-cue {
-    position: absolute;
-    bottom: 24px;
-    left: 60px;
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--cream-dim);
-    z-index: 3;
-    opacity: 0;
-    animation: rise 1s ease-out 1.8s forwards;
-  }
-  .scroll-cue::after {
-    content: '';
-    display: block;
-    margin-top: 10px;
-    width: 1px;
-    height: 32px;
-    background: linear-gradient(to bottom, var(--cream-dim), transparent);
-    animation: pulse-line 2s ease-in-out infinite;
-  }
-  @keyframes pulse-line {
-    0%, 100% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; }
-    50%      { opacity: 1;   transform: scaleY(1);   }
-  }
-  @media (max-width: 1024px) {
-    .scroll-cue { display: none; }
-  }
-
-  /* ───── marquee ─────────────────────── */
-  .marquee {
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 28px 0;
-    overflow: hidden;
-    background: var(--char-deep);
-    position: relative;
-  }
-  .marquee__track {
-    display: flex;
-    align-items: center;
-    gap: 48px;
-    white-space: nowrap;
-    width: max-content;
-    animation: scroll 30s linear infinite;
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: clamp(32px, 5vw, 64px);
-    color: var(--cream);
-    letter-spacing: -0.02em;
-  }
-  .marquee__track span {
-    display: inline-flex;
-    align-items: center;
-    gap: 48px; /* matches outer gap so ✦ separators are evenly spaced */
-  }
-  .marquee__track span::after {
-    content: '✦';
-    color: var(--ember);
-    font-size: 0.4em;
-    font-style: normal;
-  }
-  @keyframes scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-  /* mobile: faster + smaller text so more phrases stream past per second */
-  @media (max-width: 768px) {
-    .marquee { padding: 20px 0; }
-    .marquee__track {
-      animation-duration: 18s;
-      gap: 32px;
-      font-size: 28px;
-    }
-    .marquee__track span { gap: 32px; }
-  }
-
-  /* ───── sections ───────────── */
-  .section {
-    padding: 140px 40px;
-    position: relative;
-  }
-  .section__inner { max-width: 1320px; margin: 0 auto; }
-
-  .section__head {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 32px;
-    align-items: end;
-    margin-bottom: 80px;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 32px;
-  }
-  @media (max-width: 768px) {
-    .section { padding: 80px 20px; }
-    .section__head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
-  }
-
-  .section__num {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--ember);
-    text-transform: uppercase;
-  }
-  .section__title {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(36px, 5vw, 72px);
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: var(--cream);
-    font-variation-settings: "opsz" 144, "SOFT" 50;
-  }
-  .section__title em {
-    font-style: italic;
-    color: var(--ember);
-  }
-
-  /* ───── boards ────────────────────── */
-  .boards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  @media (max-width: 900px) {
-    .boards { grid-template-columns: 1fr; }
-  }
-
-  .board {
-    background: var(--char-mid);
-    padding: 0 0 48px; /* zero top padding — hero photo will sit at the top */
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.5s ease,
-                background 0.5s ease;
-  }
-  /* RICH HOVER STATE — lifts, brightens, ember glow appears */
-  .board:hover {
-    background: var(--char-soft);
-    transform: translateY(-4px);
-    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6),
-                0 0 60px -20px rgba(217, 74, 28, 0.25);
-  }
-  .board:hover .board__hero img { transform: scale(1.06); }
-  .board:hover .board__hero-glow { opacity: 1; }
-  .board:hover .board__cta { background: var(--cream); color: var(--char-deep); }
-  .board--featured:hover .board__cta {
-    background: var(--ember-bright);
-    border-color: var(--ember-bright);
-    box-shadow: 0 8px 30px -8px rgba(217, 74, 28, 0.6);
-  }
-
-  .board--featured {
-    background: linear-gradient(160deg, #1a1610 0%, #14110e 100%);
-  }
-
-  /* HERO PHOTO at top of each card */
-  .board__hero {
-    position: relative;
-    aspect-ratio: 16 / 11;
-    overflow: hidden;
-    background: var(--char-deep);
-    margin-bottom: 0;
-  }
-  .board__hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  /* dark gradient at the bottom so the price reads cleanly when overlapping */
-  .board__hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
+@media (max-width: 1024px) {
+  .offer-grid { grid-template-columns: repeat(2, 1fr); }
+  .offers { padding: 80px 28px; }
+  .offers__intro { margin-bottom: 44px; }
+}
+@media (max-width: 480px) {
+  .offer-grid { grid-template-columns: 1fr; gap: 14px; }
+  .offer { aspect-ratio: 16 / 11; }
+  /* stronger gradient on the wider mobile tile so text overlay reads against busy food shots */
+  .offer::before {
     background: linear-gradient(180deg,
-      rgba(8,7,10,0.0) 0%,
-      rgba(8,7,10,0.0) 40%,
-      rgba(20,17,14,0.85) 85%,
-      var(--char-mid) 100%);
-    pointer-events: none;
+      rgba(8,7,10,0.15) 0%,
+      rgba(8,7,10,0.45) 25%,
+      rgba(8,7,10,0.85) 55%,
+      rgba(8,7,10,0.96) 80%,
+      rgba(8,7,10,0.98) 100%);
   }
-  .board--featured .board__hero::after {
-    background: linear-gradient(180deg,
-      rgba(8,7,10,0.0) 0%,
-      rgba(8,7,10,0.0) 40%,
-      rgba(26,22,16,0.85) 85%,
-      #1a1610 100%);
-  }
-  /* ember glow that intensifies on hover */
-  .board__hero-glow {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 100%, rgba(217, 74, 28, 0.35) 0%, transparent 60%);
-    opacity: 0.4;
-    transition: opacity 0.6s ease;
-    pointer-events: none;
-    mix-blend-mode: screen;
-  }
+  .offer__body { padding: 20px; }
+  .offer__title { font-size: 26px; margin-bottom: 6px; }
+  .offer__meta { margin-bottom: 12px; font-size: 9px; }
+}
 
-  /* PREMIUM BADGE — pulsing ember pill on the £80 card */
-  .board__badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 5;
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.28em;
-    color: var(--char-deep);
-    background: var(--ember);
-    padding: 8px 14px;
-    font-weight: 500;
-    box-shadow: 0 4px 20px rgba(217, 74, 28, 0.5);
-    animation: badge-pulse 2.6s ease-in-out infinite;
-    white-space: nowrap;
+/* ────────────────────────── PRESS BAR ────────────────────────── */
+.press {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 36px 60px;
+  background: var(--char-mid);
+  overflow: hidden;
+}
+.press__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--cream-dim);
+}
+.press__item { display: flex; align-items: center; gap: 14px; white-space: nowrap; }
+.press__item strong { color: var(--cream); font-weight: 500; }
+.press__sep { width: 28px; height: 1px; background: var(--ember); }
+@media (max-width: 1024px) {
+  .press { padding: 20px 0; }
+  .press__row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 28px;
+    gap: 28px;
+    scrollbar-width: none;
   }
-  .board__badge::before {
-    content: '★ ';
-    font-size: 10px;
-    margin-right: 2px;
-  }
-  @keyframes badge-pulse {
-    0%, 100% { box-shadow: 0 4px 20px rgba(217, 74, 28, 0.5); transform: scale(1); }
-    50%      { box-shadow: 0 6px 30px rgba(255, 106, 44, 0.85); transform: scale(1.04); }
-  }
+  .press__row::-webkit-scrollbar { display: none; }
+}
 
-  /* card body wrapper — proper padding starts here, below the photo */
-  .board__body {
-    padding: 36px 48px 0;
-    position: relative;
-  }
+/* ───────────────────── SUNDAY ROAST DEEP-DIVE ──────────────────── */
+.roast {
+  padding: 140px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  background: var(--char-deep);
+}
+.roast__media {
+  position: relative;
+}
+.roast__media-main {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+.roast__media-accent {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 50%;
+  aspect-ratio: 3 / 4;
+  z-index: 3;
+  border: 8px solid var(--char-deep);
+  object-fit: cover;
+}
+.roast__media-glow {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  right: -60px;
+  bottom: -60px;
+  background: radial-gradient(ellipse at center, rgba(217, 74, 28, 0.18) 0%, transparent 65%);
+  z-index: 1;
+  filter: blur(40px);
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+.roast__body { max-width: 540px; }
+.roast__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.roast__eyebrow::before {
+  content: '✦';
+  font-size: 8px;
+  color: var(--ember);
+}
+.roast__heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(38px, 4.5vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+.roast__heading em {
+  font-style: italic;
+  color: var(--ember);
+}
+.roast__lede {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--cream);
+  margin-bottom: 28px;
+}
+.roast__lede strong { font-weight: 500; color: var(--cream); }
+.roast__features {
+  list-style: none;
+  margin-bottom: 40px;
+  border-top: 1px solid var(--line);
+}
+.roast__features li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 15px;
+}
+.roast__features li::before {
+  content: '✦';
+  color: var(--ember);
+  font-size: 11px;
+  transform: translateY(-1px);
+}
+.roast__features li strong { color: var(--cream); font-weight: 500; }
+.roast__features li em {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--cream-dim);
+  margin-left: auto;
+  font-size: 14px;
+}
+@media (max-width: 1024px) {
+  .roast { grid-template-columns: 1fr; padding: 80px 28px; gap: 60px; }
+  .roast__media-accent { bottom: -30px; right: -10px; width: 45%; border-width: 5px; }
+}
 
-  @media (max-width: 768px) {
-    .board__body { padding: 28px 28px 0; }
-    .board__hero { aspect-ratio: 16 / 9; }
-    .board__badge {
-      top: 14px;
-      right: 14px;
-      transform: none;
-      padding: 7px 12px;
-      font-size: 9px;
-      letter-spacing: 0.22em;
-    }
-  }
+/* ───────────────────────── BRUNCH BAND ────────────────────────── */
+.brunch {
+  padding: 120px 60px;
+  background: var(--char-mid);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.brunch__body { max-width: 540px; }
+.brunch__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 24px;
+}
+.brunch__heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(36px, 4.5vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+}
+.brunch__heading em { font-style: italic; color: var(--ember); }
+.brunch__lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  margin-bottom: 32px;
+}
+.brunch__lede strong { color: var(--cream); font-weight: 500; }
+.brunch__variants {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.brunch__buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.brunch__variant {
+  border: 1px solid var(--line);
+  padding: 22px;
+  background: var(--char-deep);
+  transition: border-color 0.3s ease;
+}
+.brunch__variant:hover { border-color: var(--ember); }
+.brunch__variant-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--ember);
+  margin-bottom: 12px;
+}
+.brunch__variant-name {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.brunch__variant-price {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--cream-dim);
+}
+.brunch__media {
+  position: relative;
+}
+.brunch__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+@media (max-width: 1024px) {
+  .brunch { grid-template-columns: 1fr; padding: 80px 28px; gap: 50px; }
+}
 
-  .board__label {
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.32em;
-    color: var(--cream-dim);
-    margin-bottom: 16px;
-  }
+/* ────────────────────────── OUR MEAT ───────────────────────────── */
+.meat {
+  padding: 140px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  background: var(--char-deep);
+  position: relative;
+}
+.meat__body { max-width: 520px; }
+.meat__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 24px;
+}
+.meat__heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(38px, 4.5vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+.meat__heading em { font-style: italic; color: var(--ember); }
+.meat__lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--cream);
+  margin-bottom: 36px;
+}
+.meat__lede strong { font-weight: 500; }
+.meat__numbered {
+  list-style: none;
+  margin-bottom: 40px;
+}
+.meat__numbered li {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+  align-items: baseline;
+}
+.meat__numbered li:last-child { border-bottom: 1px solid var(--line); }
+.meat__number {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--ember);
+  line-height: 1;
+}
+.meat__item-title {
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+.meat__item-detail {
+  font-size: 14px;
+  color: var(--cream-dim);
+  line-height: 1.5;
+}
+.meat__media {
+  position: relative;
+}
+.meat__media img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+.meat__media-quote {
+  position: absolute;
+  bottom: -32px;
+  left: -32px;
+  background: var(--ember);
+  color: var(--char-deep);
+  padding: 22px 28px;
+  max-width: 280px;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.meat__media-quote::before {
+  content: '"';
+  font-family: var(--display);
+  font-size: 60px;
+  position: absolute;
+  top: -16px;
+  left: 14px;
+  line-height: 1;
+  color: var(--char-deep);
+  font-style: normal;
+}
+.meat__media-quote cite {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-style: normal;
+  color: var(--char-deep);
+  opacity: 0.7;
+}
+@media (max-width: 1024px) {
+  .meat { grid-template-columns: 1fr; padding: 80px 28px; gap: 60px; }
+  .meat__media-quote { bottom: -20px; left: 0; max-width: 100%; font-size: 15px; padding: 18px 22px; }
+}
 
-  .board__price {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(80px, 10vw, 140px);
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-    color: var(--cream);
-    margin-bottom: 8px;
-    font-variation-settings: "opsz" 144;
-    position: relative;
-    display: inline-block;
-  }
-  .board__price .currency {
-    font-size: 0.5em;
-    vertical-align: top;
-    color: var(--ember);
-    font-weight: 400;
-    margin-right: 4px;
-  }
-  /* ANIMATED EMBER UNDERLINE — draws in when board comes into view */
-  .board__price::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    height: 4px;
-    width: 100%;
-    background: linear-gradient(90deg, var(--ember) 0%, var(--ember-bright) 50%, transparent 100%);
-    box-shadow: 0 0 16px rgba(217, 74, 28, 0.6);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
-  }
-  .reveal.in-view .board__price::after { transform: scaleX(1); }
-  .boards.in-view .board__price::after { transform: scaleX(1); }
+/* ─────────────────────────── TACOS ──────────────────────────── */
+.tacos {
+  padding: 140px 60px;
+  background: var(--char-mid);
+  position: relative;
+}
+.tacos__head {
+  margin-bottom: 60px;
+  max-width: 900px;
+}
+.tacos__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.tacos__eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--ember);
+}
+.tacos__heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(40px, 5.5vw, 88px);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  max-width: 14ch;
+}
+.tacos__heading em { font-style: italic; color: var(--ember); }
+.tacos__media-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+.tacos__media-main {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+.tacos__media-main img { width: 100%; height: 100%; object-fit: cover; }
+.tacos__media-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+}
+.tacos__media-side > div {
+  overflow: hidden;
+  background: var(--char-deep);
+}
+.tacos__media-side img { width: 100%; height: 100%; object-fit: cover; }
+.tacos__detail {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+}
+.tacos__detail-text {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(24px, 2.6vw, 36px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.tacos__detail-text em { color: var(--ember); font-style: italic; }
+.tacos__detail-meta {
+  border-left: 1px solid var(--line);
+  padding-left: 40px;
+  font-size: 15px;
+  color: var(--cream-dim);
+  line-height: 1.65;
+}
+.tacos__detail-meta p { margin-bottom: 16px; }
+.tacos__detail-meta p:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) {
+  .tacos { padding: 80px 28px; }
+  .tacos__head { margin-bottom: 40px; }
+  .tacos__media-grid { grid-template-columns: 1fr; gap: 12px; }
+  .tacos__media-side { grid-template-rows: auto; grid-template-columns: 1fr 1fr; }
+  .tacos__media-side > div { aspect-ratio: 1 / 1; }
+  .tacos__detail { grid-template-columns: 1fr; gap: 30px; }
+  .tacos__detail-meta { border-left: none; border-top: 1px solid var(--line); padding: 24px 0 0; }
+}
 
-  .board__price-sub {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: 14px;
-    color: var(--cream-dim);
-    margin-bottom: 40px;
-  }
+/* ───────────────────────── REVIEWS ─────────────────────────── */
+.reviews {
+  padding: 120px 60px;
+  background: var(--char-deep);
+  text-align: center;
+}
+.reviews__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 18px;
+}
+.reviews__heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(36px, 4.2vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+.reviews__heading em { font-style: italic; color: var(--ember); }
+.reviews__sub {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--cream-dim);
+  margin-bottom: 64px;
+}
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+.review {
+  border-top: 1px solid var(--ember);
+  padding-top: 28px;
+}
+.review__stars {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ember);
+  letter-spacing: 0.2em;
+  margin-bottom: 18px;
+}
+.review__body {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.4;
+  margin-bottom: 22px;
+  color: var(--cream);
+}
+.review__author {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--cream-mute);
+}
+@media (max-width: 900px) {
+  .reviews { padding: 80px 28px; }
+  .reviews__grid { grid-template-columns: 1fr; gap: 32px; }
+}
 
-  .board__divider {
-    height: 1px;
-    background: var(--line);
-    margin: 32px 0;
-    position: relative;
-  }
-  .board__divider::after {
-    content: '✦';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--char-mid);
-    padding: 0 12px;
-    color: var(--ember);
-    font-size: 10px;
-  }
-  .board--featured .board__divider::after { background: #1a1610; }
+/* ─────────────────────── LOCATIONS ─────────────────────────── */
+.locations {
+  padding: 120px 60px;
+  background: var(--char-mid);
+}
+.locations__head {
+  margin-bottom: 56px;
+  max-width: 800px;
+}
+.locations__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.locations__eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--ember);
+}
+.locations__heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(38px, 4.5vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 22px;
+}
+.locations__heading em { font-style: italic; color: var(--ember); }
+.locations__sub {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--cream-dim);
+  line-height: 1.5;
+  max-width: 38ch;
+}
+.locations__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.location {
+  background: var(--char-deep);
+  padding: 36px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.location__tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 16px;
+}
+.location__name {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+.location__addr {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+.location__near {
+  font-size: 13px;
+  color: var(--cream-dim);
+  margin-bottom: 28px;
+}
+.location__hours {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--cream-dim);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  border-top: 1px solid var(--line-soft);
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 22px;
+}
+.location__hours dt {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--cream-mute);
+}
+.location__hours dd { color: var(--cream); }
+.location__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+.location__phone {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--cream-dim);
+  padding: 14px 0;
+  margin-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+.location__phone a { color: var(--ember); }
+@media (max-width: 900px) {
+  .locations { padding: 80px 28px; }
+  .locations__head { margin-bottom: 40px; }
+  .locations__grid { grid-template-columns: 1fr; gap: 20px; }
+  .location { padding: 28px; }
+  .location__name { font-size: 38px; }
+}
 
-  /* DIFFERENCE HIGHLIGHTING — items unique to the £80 get a glowing ember dot */
-  .course--upgrade .course__name,
-  .drinks__item--upgrade .drinks__contents {
-    color: var(--cream);
-    position: relative;
-  }
-  .course--upgrade,
-  .drinks__item--upgrade {
-    position: relative;
-  }
-  .course--upgrade::before,
-  .drinks__item--upgrade::before {
-    content: '';
-    position: absolute;
-    left: -16px;
-    top: 0.6em;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--ember);
-    box-shadow:
-      0 0 0 3px rgba(217, 74, 28, 0.18),
-      0 0 16px rgba(217, 74, 28, 0.85);
-    animation: upgrade-pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes upgrade-pulse {
-    0%, 100% {
-      box-shadow:
-        0 0 0 3px rgba(217, 74, 28, 0.18),
-        0 0 16px rgba(217, 74, 28, 0.7);
-    }
-    50% {
-      box-shadow:
-        0 0 0 5px rgba(217, 74, 28, 0.10),
-        0 0 22px rgba(255, 106, 44, 1);
-    }
-  }
-  /* small left padding so the dot sits clear */
-  .board--featured .course--upgrade,
-  .board--featured .drinks__item--upgrade {
-    padding-left: 6px;
-  }
-  .course--upgrade .course__name {
-    font-weight: 500;
-  }
-  .course--upgrade .course__name em {
-    color: var(--ember);
-  }
-  /* '+ Lobster' / '+ Cocktails' inline tag — kept visible on mobile too */
-  .upgrade-tag {
-    display: inline-block;
-    margin-left: 8px;
-    font-family: var(--mono);
-    font-size: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--ember);
-    border: 1px solid var(--ember);
-    padding: 2px 6px;
-    vertical-align: middle;
-    transform: translateY(-1px);
-    white-space: nowrap;
-  }
-  @media (max-width: 480px) {
-    .upgrade-tag {
-      font-size: 7px;
-      padding: 1px 5px;
-      letter-spacing: 0.18em;
-      margin-left: 6px;
-    }
-  }
+/* ──────────────────────── EXTRAS BAND ───────────────────────── */
+.extras {
+  padding: 100px 60px;
+  background: var(--char-deep);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.extra {
+  position: relative;
+  padding: 60px 48px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: border-color 0.4s ease;
+}
+.extra:hover { border-color: var(--ember); }
+.extra::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 100%, rgba(217, 74, 28, 0.08) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.extra:hover::before { opacity: 1; }
+.extra__tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 18px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+.extra__tag::before { content: '✦'; color: var(--ember); font-size: 8px; }
+.extra__title {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+.extra__title em { font-style: italic; color: var(--ember); }
+.extra__body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  margin-bottom: 28px;
+  max-width: 42ch;
+}
+.extra__link {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ember);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: gap 0.3s ease;
+}
+.extra__link:hover { gap: 18px; }
+.extra__link::after { content: '→'; font-family: var(--body); }
+@media (max-width: 900px) {
+  .extras { grid-template-columns: 1fr; padding: 60px 28px; }
+  .extra { padding: 40px 28px; }
+}
 
-  .board__cta {
-    margin-top: 40px;
-    width: calc(100% - 96px);
-    margin-left: 48px;
-    margin-right: 48px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  @media (max-width: 768px) {
-    .board__cta {
-      width: calc(100% - 56px);
-      margin-left: 28px;
-      margin-right: 28px;
-    }
-  }
+/* ─────────────────────── NEWSLETTER ────────────────────────── */
+.newsletter {
+  padding: 100px 60px;
+  background: var(--char-mid);
+  border-top: 1px solid var(--ember);
+  text-align: center;
+}
+.newsletter__inner { max-width: 640px; margin: 0 auto; }
+.newsletter__eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 18px;
+}
+.newsletter__heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.newsletter__sub {
+  font-size: 15px;
+  color: var(--cream-dim);
+  margin-bottom: 36px;
+  line-height: 1.55;
+}
+.newsletter__form {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--ember);
+  padding-bottom: 14px;
+}
+.newsletter__input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 16px;
+  padding: 10px 4px;
+  outline: none;
+}
+.newsletter__input::placeholder { color: var(--cream-mute); font-style: italic; }
+.newsletter__submit {
+  background: transparent;
+  border: 0;
+  color: var(--ember);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  cursor: pointer;
+  padding: 10px 14px;
+  transition: color 0.2s ease;
+}
+.newsletter__submit:hover { color: var(--ember-bright); }
+.newsletter__fine {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--cream-mute);
+  margin-top: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) { .newsletter { padding: 70px 28px; } }
 
-  .course { margin-bottom: 24px; }
-  .course__label {
-    font-family: var(--mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.4em;
-    color: var(--ember);
-    margin-bottom: 6px;
-  }
-  .course__name {
-    font-family: var(--display);
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.2;
-    color: var(--cream);
-    letter-spacing: -0.01em;
-  }
-  .course__name em { font-style: italic; }
-  .course__detail {
-    font-size: 13px;
-    color: var(--cream-dim);
-    margin-top: 4px;
-    line-height: 1.4;
-  }
+/* ──────────────────── FINAL CTA + FOOTER ──────────────────── */
+.final-cta {
+  position: relative;
+  padding: 140px 60px;
+  text-align: center;
+  background: var(--char-deep);
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(217, 74, 28, 0.25) 0%, transparent 60%);
+  filter: blur(50px);
+  animation: pulse-glow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+.final-cta__inner { position: relative; max-width: 720px; margin: 0 auto; }
+.final-cta__eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 26px;
+}
+.final-cta__heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(48px, 7vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+.final-cta__heading em { font-style: italic; color: var(--ember); }
+.final-cta__sub {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--cream-dim);
+  margin-bottom: 44px;
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.final-cta__buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .final-cta { padding: 90px 28px; }
+  .final-cta__buttons .btn { flex: 1 1 100%; justify-content: space-between; }
+}
 
-  .drinks { margin-top: 32px; }
-  .drinks__head {
-    font-family: var(--mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.4em;
-    color: var(--ember);
-    margin-bottom: 14px;
-  }
-  .drinks__list {
-    display: grid;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--cream);
-  }
-  .drinks__item {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 16px;
-    padding: 8px 0;
-    border-bottom: 1px dashed var(--line);
-    align-items: baseline;
-  }
-  .drinks__item:last-child { border-bottom: none; }
-  .drinks__type {
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--cream-dim);
-  }
-  .drinks__contents {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: 15px;
-    line-height: 1.4;
-  }
+.footer {
+  background: var(--char-deep);
+  border-top: 1px solid var(--line);
+  padding: 70px 60px 32px;
+}
+.footer__top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+.footer__brand img { height: 28px; width: auto; margin-bottom: 18px; }
+.footer__brand p {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--cream-dim);
+  max-width: 28ch;
+  line-height: 1.5;
+}
+.footer__col h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--ember);
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+.footer__col ul { list-style: none; }
+.footer__col li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--cream-dim);
+}
+.footer__col a {
+  transition: color 0.2s ease;
+}
+.footer__col a:hover { color: var(--ember); }
+.footer__base {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--cream-mute);
+}
+.footer__base a:hover { color: var(--cream); }
+.footer__base-links { display: flex; gap: 26px; }
+@media (max-width: 900px) {
+  .footer { padding: 50px 28px 28px; }
+  .footer__top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer__brand { grid-column: 1 / -1; }
+  .footer__base { flex-direction: column; gap: 20px; text-align: center; }
+  .footer__base-links { flex-wrap: wrap; justify-content: center; gap: 18px; }
+}
 
-  /* ───── editorial split ───────────── */
-  .split {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  @media (max-width: 900px) {
-    .split { grid-template-columns: 1fr; gap: 48px; }
-  }
+/* ───────────────────────── REVEAL ON SCROLL ───────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .split__image {
-    position: relative;
-    overflow: hidden;
-    background: var(--char-soft);
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
-  .split__image--portrait { aspect-ratio: 4 / 5; }
-  .split__image--landscape { aspect-ratio: 3 / 2; }
-  .split__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .split__image:hover img { transform: scale(1.04); }
-  .split__image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(170deg, rgba(0,0,0,0) 60%, rgba(8,7,10,0.45) 100%);
-    pointer-events: none;
-  }
-
-  .split__caption {
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: var(--cream);
-    z-index: 2;
-  }
-  .split__caption::before {
-    content: '— ';
-    color: var(--ember);
-  }
-
-  .split--reverse .split__image { order: 2; }
-  @media (max-width: 900px) {
-    .split--reverse .split__image { order: 0; }
-  }
-
-  .split__title {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(36px, 4.5vw, 60px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--cream);
-    margin-bottom: 28px;
-    font-variation-settings: "opsz" 144, "SOFT" 50;
-  }
-  .split__title em { font-style: italic; color: var(--ember); }
-
-  .split__body {
-    font-size: 16px;
-    line-height: 1.75;
-    color: var(--cream-dim);
-    margin-bottom: 16px;
-    max-width: 540px;
-  }
-  .split__body strong { color: var(--cream); font-weight: 500; }
-
-  .split__body--first::first-letter {
-    font-family: var(--display);
-    font-weight: 300;
-    font-style: italic;
-    font-size: 4.4em;
-    line-height: 0.85;
-    float: left;
-    padding: 6px 12px 0 0;
-    color: var(--ember);
-    font-variation-settings: "opsz" 144, "WONK" 1;
-  }
-
-  .features {
-    list-style: none;
-    margin-top: 32px;
-    border-top: 1px solid var(--line);
-    padding-top: 24px;
-  }
-  .features li {
-    padding: 14px 0 14px 40px;
-    border-bottom: 1px solid var(--line);
-    position: relative;
-    font-size: 15px;
-    color: var(--cream);
-    line-height: 1.5;
-  }
-  .features li::before {
-    content: '✦';
-    color: var(--ember);
-    font-size: 11px;
-    position: absolute;
-    left: 0;
-    top: 18px;
-  }
-  .features__note {
-    color: var(--ember);
-    font-style: italic;
-    font-family: var(--display);
-    font-weight: 300;
-    margin-left: 6px;
-    font-size: 0.95em;
-  }
-
-  /* ───── gallery ──────────────────────── */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 16px;
-    margin-top: 80px;
-  }
-  .gallery__item {
-    overflow: hidden;
-    position: relative;
-    background: var(--char-soft);
-  }
-  .gallery__item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .gallery__item:hover img { transform: scale(1.05); }
-  .gallery__item::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(8,7,10,0.5) 100%);
-    pointer-events: none;
-  }
-  .gallery__item--1 { grid-column: span 5; aspect-ratio: 4 / 5; }
-  .gallery__item--2 { grid-column: span 4; aspect-ratio: 3 / 4; margin-top: 60px; }
-  .gallery__item--3 { grid-column: span 3; aspect-ratio: 2 / 3; }
-  .gallery__item--4 { grid-column: span 4; aspect-ratio: 3 / 4; }
-  .gallery__item--5 { grid-column: span 8; aspect-ratio: 16 / 9; }
-
-  @media (max-width: 768px) {
-    .gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .gallery__item { grid-column: span 1 !important; aspect-ratio: 3/4 !important; margin-top: 0 !important; }
-  }
-
-  /* ───── reservation ───────────── */
-  .reserve {
-    background:
-      radial-gradient(ellipse at 50% 110%, #2a1408 0%, #100c08 40%, var(--char-deep) 80%),
-      var(--char-deep);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 160px;
-    padding-bottom: 160px;
-  }
-
-  /* base ember bed — large, soft, slow drift */
-  .reserve::before {
-    content: '';
-    position: absolute;
-    bottom: -40%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 140%;
-    height: 120%;
-    background:
-      radial-gradient(ellipse 80% 60% at 30% 100%, rgba(217, 74, 28, 0.42) 0%, transparent 55%),
-      radial-gradient(ellipse 70% 55% at 70% 100%, rgba(255, 106, 44, 0.32) 0%, transparent 50%),
-      radial-gradient(ellipse 90% 70% at 50% 100%, rgba(107, 26, 14, 0.55) 0%, transparent 60%);
-    filter: blur(50px);
-    animation: fire-drift 11s ease-in-out infinite alternate;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  /* upper flicker — smaller, faster, brighter */
-  .reserve::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 70%;
-    background:
-      radial-gradient(ellipse 50% 80% at 40% 100%, rgba(255, 140, 60, 0.25) 0%, transparent 45%),
-      radial-gradient(ellipse 40% 70% at 65% 100%, rgba(255, 90, 30, 0.22) 0%, transparent 45%);
-    filter: blur(30px);
-    animation: fire-flicker 4.2s ease-in-out infinite;
-    z-index: 1;
-    pointer-events: none;
-    mix-blend-mode: screen;
-  }
-
-  @keyframes fire-drift {
-    0%   { transform: translateX(-52%) scale(1) translateY(0); opacity: 0.85; }
-    33%  { transform: translateX(-48%) scale(1.04) translateY(-12px); opacity: 1; }
-    66%  { transform: translateX(-51%) scale(0.98) translateY(-6px); opacity: 0.9; }
-    100% { transform: translateX(-49%) scale(1.02) translateY(-18px); opacity: 0.95; }
-  }
-  @keyframes fire-flicker {
-    0%, 100% { opacity: 0.7; transform: translateX(-50%) scaleY(1); }
-    25%      { opacity: 1;   transform: translateX(-48%) scaleY(1.08); }
-    50%      { opacity: 0.6; transform: translateX(-52%) scaleY(0.95); }
-    75%      { opacity: 0.95; transform: translateX(-49%) scaleY(1.04); }
-  }
-
-  /* respect reduced motion — kill the animations but keep the glow static */
-  @media (prefers-reduced-motion: reduce) {
-    .reserve::before,
-    .reserve::after { animation: none; }
-  }
-
-  .reserve__inner { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
-
-  .reserve__title {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(48px, 8vw, 120px);
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-    color: var(--cream);
-    margin: 24px 0 28px;
-    font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
-  }
-  .reserve__title em { font-style: italic; color: var(--ember); }
-
-  .reserve__lede {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: clamp(18px, 2vw, 22px);
-    color: var(--cream-dim);
-    margin-bottom: 48px;
-    line-height: 1.5;
-  }
-
-  .reserve__ctas {
-    display: inline-flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .reserve__ctas .btn { min-width: 240px; }
-
-  .reserve__phone {
-    margin-top: 48px;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--cream-dim);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-  .reserve__phone a {
-    color: var(--ember);
-    border-bottom: 1px solid var(--ember);
-    padding-bottom: 2px;
-    margin-left: 8px;
-  }
-  .reserve__phone a:hover { color: var(--ember-bright); }
-
-  /* ───── faq ─────────────────────────── */
-  .faq__list { margin-top: 32px; }
-  .faq__item {
-    border-top: 1px solid var(--line);
-    padding: 28px 0;
-  }
-  .faq__item:last-child { border-bottom: 1px solid var(--line); }
-  .faq__item summary {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 32px;
-    cursor: pointer;
-  }
-  .faq__item summary::-webkit-details-marker { display: none; }
-  .faq__item:hover summary .faq__q { color: var(--ember); }
-
-  .faq__q {
-    font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(20px, 2.2vw, 28px);
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    color: var(--cream);
-    transition: color 0.25s ease;
-  }
-  .faq__icon {
-    font-family: var(--mono);
-    color: var(--ember);
-    font-size: 18px;
-    transition: transform 0.3s ease;
-    align-self: center;
-  }
-  .faq__item[open] .faq__icon { transform: rotate(45deg); }
-
-  .faq__a {
-    color: var(--cream-dim);
-    font-size: 16px;
-    line-height: 1.7;
-    padding-top: 20px;
-    max-width: 800px;
-  }
-
-  /* ───── location strip ────────────── */
-  .location {
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 60px 40px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    text-align: left;
-    background: var(--char-mid);
-  }
-  @media (max-width: 768px) {
-    .location { grid-template-columns: 1fr 1fr; gap: 32px; padding: 40px 20px; }
-  }
-
-  .location__item .label {
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--ember);
-    margin-bottom: 10px;
-  }
-  .location__item .value {
-    font-family: var(--display);
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 1.4;
-    color: var(--cream);
-  }
-  .location__item .value em {
-    font-style: italic;
-    color: var(--cream-dim);
-    font-size: 14px;
-    display: block;
-    margin-top: 4px;
-  }
-
-  /* ───── footer ─────────────────────── */
-  .foot {
-    padding: 80px 40px 40px;
-    background: var(--char-deep);
-    border-top: 1px solid var(--line);
-  }
-  .foot__inner {
-    max-width: 1320px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 60px;
-    margin-bottom: 60px;
-  }
-  @media (max-width: 768px) {
-    .foot { padding: 60px 20px 30px; }
-    .foot__inner { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .foot__brand-block { grid-column: 1 / -1; }
-  }
-
-  .foot__brand {
-    margin-bottom: 16px;
-  }
-  .foot__brand img {
-    height: 36px;
-    width: auto;
-    display: block;
-    margin-bottom: 8px;
-  }
-  .foot__brand-city {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: 22px;
-    color: var(--ember);
-    font-variation-settings: "opsz" 144;
-    letter-spacing: 0.02em;
-  }
-  .foot__tag {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: 16px;
-    color: var(--cream-dim);
-    line-height: 1.5;
-    max-width: 380px;
-  }
-  .foot__col-title {
-    font-family: var(--mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--ember);
-    margin-bottom: 18px;
-  }
-  .foot__col ul { list-style: none; }
-  .foot__col li { padding: 6px 0; }
-  .foot__col a {
-    font-size: 14px;
-    color: var(--cream-dim);
-    transition: color 0.2s ease;
-  }
-  .foot__col a:hover { color: var(--cream); }
-
-  .foot__bottom {
-    border-top: 1px solid var(--line);
-    padding-top: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--cream-dim);
-    max-width: 1320px;
-    margin: 0 auto;
-  }
-
-  /* ───── reveal-on-scroll ───────────── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal.in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal--delay-1 { transition-delay: 0.1s; }
-  .reveal--delay-2 { transition-delay: 0.2s; }
-  .reveal--delay-3 { transition-delay: 0.3s; }
-
-  .disclaimer {
-    text-align: center;
-    font-size: 12px;
-    color: var(--cream-dim);
-    font-style: italic;
-    margin-top: 32px;
-    font-family: var(--display);
-    font-weight: 300;
-  }
+  .reveal { opacity: 1; transform: none; }
+}
 </style>
 </head>
 <body>
 
-<!-- ─────────── NAV ─────────── -->
+<!-- ───────────────────── NAV ─────────────────────────────────── -->
 <nav class="nav" id="nav">
-  <a href="#" class="nav__brand">
+  <a class="nav__brand" href="#top">
     <img src="assets/temper-logo.png" alt="temper" />
-    <span class="nav__brand-divider"></span>
-    <span class="nav__brand-city">City</span>
   </a>
-  <div class="nav__links">
-    <a href="#boards">Menu</a>
-    <a href="#brunch">About</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#faq">FAQ</a>
-    <a href="https://temperrestaurant.com" target="_blank" rel="noopener">temperrestaurant.com ↗</a>
+  <div class="nav__menu">
+    <a href="#offers">Brunch &amp; Roast</a>
+    <a href="#meat">Our Meat</a>
+    <a href="#tacos">Tacos</a>
+    <a href="#locations">Soho &amp; City</a>
   </div>
-  <a href="#reserve" class="nav__cta">Reserve a Table</a>
+  <a class="nav__cta" href="#book">Book a Table</a>
 </nav>
 
-<!-- ─────────── STICKY BOOKING BAR ─────────── -->
-<div class="sticky-book" id="stickyBook" aria-hidden="true">
-  <div class="sticky-book__inner">
-    <div class="sticky-book__label"><em>Bottomless Brunch</em> · Two boards · 90 minutes</div>
-    <div class="sticky-book__ctas">
-      <a class="sticky-book__btn sticky-book__btn--ghost" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718262&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Book Surf &amp; Turf</span>
-        <span class="sticky-book__price">£70</span>
-      </a>
-      <a class="sticky-book__btn sticky-book__btn--ember" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718858&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Book + Lobster</span>
-        <span class="sticky-book__price">£80</span>
-      </a>
-    </div>
+<!-- ────────────────────── HERO ───────────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero__media">
+    <img src="assets/fire-chef.jpg" alt="A temper chef working over the open fire grill in the kitchen, with the brand skull patch on his shoulder" />
   </div>
-</div>
-
-<!-- ─────────── HERO ─────────── -->
-<section class="hero">
-  <div class="hero__text">
-    <div class="hero__eyebrow">temper City · Saturdays &amp; Sundays · 11.30 — 3.30</div>
-
+  <div class="hero__inner">
+    <div class="hero__eyebrow">Open-fire steakhouse · since 2016 · Soho &amp; the City</div>
     <h1 class="hero__title">
-      <span class="word">Lobster</span>
-      <span class="word">&amp;</span>
-      <span class="word">Steak</span><br>
-      <span class="word word--accent">Bottomless</span>
-      <span class="word word--accent">Brunch</span>
+      <span class="word">Meat.</span>
+      <span class="word">Fire.</span>
+      <span class="word">Tacos.</span>
     </h1>
-
     <p class="hero__lede">
-      Two boards. Ninety minutes. <em>Surf and turf cooked over fire</em> in the heart of the City of London — alongside free-flowing wine, beer and cocktails.
+      Rare-breed beef. Butchered in-house. Cooked over flames you can hear from across the room.
     </p>
-
     <div class="hero__ctas">
-      <a class="btn btn--ember" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718262&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Book Surf &amp; Turf</span>
-        <span class="btn__price">£70</span>
+      <a class="btn btn--ember" href="#book">
+        <span>Book a Table</span>
+        <span class="btn__arrow">→</span>
       </a>
-      <a class="btn btn--ghost" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718858&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Book with Lobster</span>
-        <span class="btn__price">£80</span>
+      <a class="btn btn--ghost" href="#offers">
+        <span>See What's On</span>
+        <span class="btn__arrow">↓</span>
       </a>
     </div>
   </div>
-
-  <div class="hero__media" id="heroMedia">
-    <img src="assets/hero-poster.jpg" alt="A full overhead view of the Lobster &amp; Steak Bottomless Brunch at temper City — oysters, lobster, dry-aged steak, scallop, fries and champagne" />
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="assets/hero-poster.jpg"
-      aria-hidden="true">
-      <source src="assets/hero.mp4" type="video/mp4" />
-    </video>
-  </div>
-
   <div class="scroll-cue">Scroll · The Menu</div>
 </section>
 
-<!-- ─────────── MARQUEE ─────────── -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <span>Cooked over fire</span>
-    <span>28-day dry-aged</span>
-    <span>Cornish lobster</span>
-    <span>Hand-shucked oysters</span>
-    <span>Ninety minutes</span>
-    <span>Free-flowing</span>
-    <span>Cooked over fire</span>
-    <span>28-day dry-aged</span>
-    <span>Cornish lobster</span>
-    <span>Hand-shucked oysters</span>
-    <span>Ninety minutes</span>
-    <span>Free-flowing</span>
+<!-- ───────────────────── OFFER GRID ─────────────────────────── -->
+<section class="offers" id="offers">
+  <div class="offers__intro reveal">
+    <div class="offers__eyebrow">01 — Reasons to Visit</div>
+    <h2 class="offers__heading">Four ways to <em>spend a meal</em> with us.</h2>
   </div>
-</div>
+  <div class="offer-grid">
 
-<!-- ─────────── BOARDS / MENU ─────────── -->
-<section class="section" id="boards">
-  <div class="section__inner">
-    <div class="section__head reveal">
-      <div class="section__num">01 — The Menu</div>
-      <h2 class="section__title">Two boards. <em>Ninety minutes.</em><br>The only question: which one's yours.</h2>
-    </div>
-
-    <div class="boards reveal">
-      <article class="board">
-        <div class="board__hero">
-          <img src="assets/shrimp-board.jpg" alt="The £70 surf and turf board: dry-aged steak, prawn and scallop" loading="lazy" />
-          <div class="board__hero-glow"></div>
+    <a class="offer reveal" href="#brunch">
+      <img class="offer__img" src="assets/burger-fries.jpg" alt="A double cheeseburger with crispy fries from the temper bottomless brunch menu" />
+      <div class="offer__body">
+        <div class="offer__tag">Saturdays</div>
+        <div>
+          <div class="offer__title">Bottomless <em>Brunch</em></div>
+          <div class="offer__meta">From £45pp · 90 minutes · Soho &amp; City</div>
+          <div class="offer__cta">Book Brunch</div>
         </div>
-        <div class="board__body">
-          <div class="board__label">Bottomless Brunch</div>
-          <div class="board__price"><span class="currency">£</span>70</div>
-          <div class="board__price-sub">per person · 90 minutes</div>
+      </div>
+    </a>
 
-          <div class="course">
-            <div class="course__label">Starter</div>
-            <div class="course__name">Over-Fire Oysters</div>
-            <div class="course__detail">Freshly-shucked, mignonette &amp; lime</div>
-          </div>
-
-          <div class="course">
-            <div class="course__label">Main</div>
-            <div class="course__name">Surf &amp; Turf</div>
-            <div class="course__detail">Black tiger prawn, seared scallop &amp; 28-day dry-aged steak</div>
-          </div>
-
-          <div class="course">
-            <div class="course__label">Sides</div>
-            <div class="course__name">Fries &amp; House Salad</div>
-            <div class="course__detail">Skin-on, sharp &amp; herbaceous, to share</div>
-          </div>
-
-          <div class="course">
-            <div class="course__label">Sauces</div>
-            <div class="course__name">Béarnaise &amp; Chimichurri</div>
-          </div>
-
-          <div class="board__divider"></div>
-
-          <div class="drinks">
-            <div class="drinks__head">Free-flowing · 90 minutes</div>
-            <div class="drinks__list">
-              <div class="drinks__item"><div class="drinks__type">Wine</div><div class="drinks__contents">White Grillo · Red Sangiovese · Sparkling</div></div>
-              <div class="drinks__item"><div class="drinks__type">Cocktail</div><div class="drinks__contents">Mimosa</div></div>
-              <div class="drinks__item"><div class="drinks__type">Beer</div><div class="drinks__contents">Madri Lager · Madri 0%</div></div>
-              <div class="drinks__item"><div class="drinks__type">Mocktail</div><div class="drinks__contents">Spiced Pineapple Margarita</div></div>
-            </div>
-          </div>
+    <a class="offer reveal" href="#roast">
+      <img class="offer__img" src="assets/roast-gravy.jpg" alt="A Yorkshire pudding with gravy being poured over rare roast beef" />
+      <div class="offer__body">
+        <div class="offer__tag">Sundays</div>
+        <div>
+          <div class="offer__title">Sunday <em>Roast</em></div>
+          <div class="offer__meta">From £28.5pp · Soho only · From 12pm</div>
+          <div class="offer__cta">Book Sunday</div>
         </div>
+      </div>
+    </a>
 
-        <a class="btn btn--ghost board__cta" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718262&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-          Book at £70
-        </a>
-      </article>
-
-      <article class="board board--featured">
-        <div class="board__badge">Most Popular</div>
-        <div class="board__hero">
-          <img src="assets/board-portrait.jpg" alt="The £80 board with half a Cornish lobster, dry-aged steak, scallop, champagne and salad" loading="lazy" />
-          <div class="board__hero-glow"></div>
+    <a class="offer reveal" href="#book">
+      <img class="offer__img" src="assets/salt-steak.jpg" alt="A temper chef salting a 28-day dry-aged steak in the open kitchen" />
+      <div class="offer__body">
+        <div class="offer__tag">Every Day</div>
+        <div>
+          <div class="offer__title">The <em>Steakhouse</em></div>
+          <div class="offer__meta">Rare-breed · Dry-aged · Live fire</div>
+          <div class="offer__cta">See Menu</div>
         </div>
-        <div class="board__body">
-          <div class="board__label">Bottomless · with Lobster</div>
-          <div class="board__price"><span class="currency">£</span>80</div>
-          <div class="board__price-sub">per person · 90 minutes · just £10 more</div>
+      </div>
+    </a>
 
-          <div class="course">
-            <div class="course__label">Starter</div>
-            <div class="course__name">Over-Fire Oysters</div>
-            <div class="course__detail">Freshly-shucked, mignonette &amp; lime</div>
-          </div>
-
-          <div class="course course--upgrade">
-            <div class="course__label">Main <span class="upgrade-tag">+ Lobster</span></div>
-            <div class="course__name"><em>Lobster</em> Surf &amp; Turf</div>
-            <div class="course__detail">Half a grilled Cornish lobster, seared scallop &amp; 28-day dry-aged steak</div>
-          </div>
-
-          <div class="course">
-            <div class="course__label">Sides</div>
-            <div class="course__name">Fries &amp; House Salad</div>
-            <div class="course__detail">Skin-on, sharp &amp; herbaceous, to share</div>
-          </div>
-
-          <div class="course">
-            <div class="course__label">Sauces</div>
-            <div class="course__name">Béarnaise &amp; Chimichurri</div>
-          </div>
-
-          <div class="board__divider"></div>
-
-          <div class="drinks">
-            <div class="drinks__head">Free-flowing · 90 minutes</div>
-            <div class="drinks__list">
-              <div class="drinks__item"><div class="drinks__type">Wine</div><div class="drinks__contents">White Grillo · Red Sangiovese · Prosecco</div></div>
-              <div class="drinks__item drinks__item--upgrade"><div class="drinks__type">Cocktails</div><div class="drinks__contents">Aperol Spritz · Margarita <span class="upgrade-tag">+ Cocktails</span></div></div>
-              <div class="drinks__item"><div class="drinks__type">Beer</div><div class="drinks__contents">Madri Lager · Madri 0%</div></div>
-              <div class="drinks__item"><div class="drinks__type">Mocktail</div><div class="drinks__contents">Spiced Pineapple Margarita</div></div>
-            </div>
-          </div>
+    <a class="offer reveal" href="#tacos">
+      <img class="offer__img" src="assets/taco-tajin.jpg" alt="A chef dusting tajin chilli over a plate of beef cheek tacos" />
+      <div class="offer__body">
+        <div class="offer__tag">Tuesdays</div>
+        <div>
+          <div class="offer__title">Taco <em>Tuesday</em></div>
+          <div class="offer__meta">£10 tacos · Margaritas · Soho &amp; City</div>
+          <div class="offer__cta">See Tacos</div>
         </div>
+      </div>
+    </a>
 
-        <a class="btn btn--ember board__cta" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718858&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-          Book at £80
-        </a>
-      </article>
-    </div>
-
-    <p class="disclaimer reveal">A discretionary 15% service charge will be added to your bill. Please inform your server of any allergies.</p>
   </div>
 </section>
 
-<!-- ─────────── SPLIT 1: ON THE PLATE ─────────── -->
-<section class="section" id="brunch">
-  <div class="section__inner">
-    <div class="split">
-      <div class="split__image split__image--portrait reveal">
-        <img src="assets/lobster-overhead.jpg" alt="The £80 board — half a Cornish lobster, dry-aged steak, seared scallop in shell, oysters and fries with champagne" loading="lazy" />
-        <div class="split__caption">No.01 · The Board</div>
-      </div>
-
-      <div class="reveal reveal--delay-1">
-        <div class="section__num" style="margin-bottom:16px;">02 — On the Plate</div>
-        <h2 class="split__title">The best <em>surf &amp; turf</em> brunch in London.</h2>
-        <p class="split__body split__body--first">
-          Lobster and steak isn't your standard bottomless brunch. <strong>Half a grilled Cornish lobster, a 28-day dry-aged British steak, a seared scallop and a chargrilled black tiger prawn</strong> — all on one plate, all cooked over open fire in our City kitchen.
-        </p>
-        <p class="split__body">
-          It opens with freshly-shucked oysters, finishes with béarnaise and chimichurri, and runs alongside ninety minutes of free-flowing wine, beer and cocktails.
-        </p>
-      </div>
-    </div>
+<!-- ──────────────────────── PRESS ──────────────────────────── -->
+<section class="press">
+  <div class="press__row">
+    <div class="press__item"><strong>"Iconic."</strong> Time Out, London</div>
+    <div class="press__sep"></div>
+    <div class="press__item"><strong>OpenTable Top 100</strong> Brunch &amp; Lunch 2026</div>
+    <div class="press__sep"></div>
+    <div class="press__item"><strong>101 Best Steakhouses</strong> In the World, 2024</div>
+    <div class="press__sep"></div>
+    <div class="press__item"><strong>"Most exciting live-fire kitchens."</strong> Evening Standard</div>
+    <div class="press__sep"></div>
+    <div class="press__item"><strong>★ 4.6</strong> · 2,458 reviews</div>
   </div>
 </section>
 
-<!-- ─────────── SPLIT 2: THE SETTING ─────────── -->
-<section class="section" style="padding-top:0;">
-  <div class="section__inner">
-    <div class="split split--reverse">
-      <div class="split__image split__image--landscape reveal">
-        <img src="assets/diners.jpg" alt="Two diners laughing at the table at temper City, the open kitchen visible behind them" loading="lazy" />
-        <div class="split__caption">No.02 · The Counter</div>
-      </div>
-
-      <div class="reveal reveal--delay-1">
-        <div class="section__num" style="margin-bottom:16px;">03 — The Setting</div>
-        <h2 class="split__title">Weekends at the <em>open kitchen counter.</em></h2>
-        <p class="split__body">
-          Saturdays and Sundays at temper City. Flames, music and a board built for sharing. Both packages include:
-        </p>
-        <ul class="features">
-          <li>Freshly-shucked oysters with mignonette and lime</li>
-          <li>Surf &amp; turf: dry-aged steak, scallop and prawn <span class="features__note">— plus lobster on the £80</span></li>
-          <li>Skin-on fries and a sharp house salad to share</li>
-          <li>Béarnaise and chimichurri</li>
-          <li>Ninety minutes of free-flowing wine, beer and cocktails</li>
-        </ul>
-      </div>
-    </div>
+<!-- ─────────────────── SUNDAY ROAST DEEP-DIVE ─────────────── -->
+<section class="roast" id="roast">
+  <div class="roast__media reveal">
+    <div class="roast__media-glow"></div>
+    <img class="roast__media-main" src="assets/roast-gravy-yorkshire.jpg" alt="A pillowy Yorkshire pudding next to fire-roasted beef with gravy" />
+    <img class="roast__media-accent" src="assets/roast-chef.jpg" alt="A temper chef holding the Three Beast Feast roast platter" />
   </div>
-</section>
-
-<!-- ─────────── GALLERY ─────────── -->
-<section class="section" id="gallery" style="padding-top:60px;">
-  <div class="section__inner">
-    <div class="section__head reveal">
-      <div class="section__num">04 — Gallery</div>
-      <h2 class="section__title">Eat with <em>your eyes.</em></h2>
-    </div>
-
-    <div class="gallery">
-      <div class="gallery__item gallery__item--1 reveal">
-        <img src="assets/scallop-close.jpg" alt="A seared scallop in its shell with chimichurri-glazed prawn, on the dry-aged steak board" loading="lazy" />
-      </div>
-      <div class="gallery__item gallery__item--2 reveal reveal--delay-1">
-        <img src="assets/champagne-atmos.jpg" alt="Champagne flute in atmospheric low light at temper City" loading="lazy" />
-      </div>
-      <div class="gallery__item gallery__item--3 reveal reveal--delay-2">
-        <img src="assets/aperol.jpg" alt="An Aperol Spritz in front of the steak board" loading="lazy" />
-      </div>
-      <div class="gallery__item gallery__item--4 reveal reveal--delay-1">
-        <img src="assets/margarita-food.jpg" alt="A spiced margarita beside the surf and turf spread" loading="lazy" />
-      </div>
-      <div class="gallery__item gallery__item--5 reveal reveal--delay-2">
-        <img src="assets/board-overhead.jpg" alt="Overhead of the £80 board: oysters, lobster, steak, scallop, fries and champagne" loading="lazy" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─────────── RESERVE ─────────── -->
-<section class="section reserve" id="reserve">
-  <div class="reserve__inner">
-    <div class="section__num reveal" style="color:var(--ember);">05 — Reserve</div>
-    <h2 class="reserve__title reveal reveal--delay-1">Take the <em>counter.</em></h2>
-    <p class="reserve__lede reveal reveal--delay-2">
-      Saturdays and Sundays at temper City. Tables of two through twelve.<br>
-      For larger parties, email <a href="mailto:events@temperrestaurant.com" style="color:var(--ember);border-bottom:1px solid var(--ember);padding-bottom:2px;">events@temperrestaurant.com</a>.
+  <div class="roast__body reveal">
+    <div class="roast__eyebrow">Sundays · From 12pm · Soho only</div>
+    <h2 class="roast__heading">Sunday roast,<br/>cooked over <em>open fire.</em></h2>
+    <p class="roast__lede">
+      <strong>The best Sunday roast in London</strong> — fire-cooked beef, pork loin or smoked lamb shoulder, crispy beef-fat potatoes, giant Yorkshires, honey-glazed carrots and a 16-hour gravy worth waiting for.
     </p>
-
-    <div class="reserve__ctas reveal reveal--delay-3">
-      <a class="btn btn--ember" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718262&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Book Surf &amp; Turf</span>
-        <span class="btn__price">£70</span>
-      </a>
-      <a class="btn btn--ghost" href="https://www.opentable.com/booking/experiences-availability?rid=401982&restref=401982&experienceId=718858&utm_source=external&utm_medium=referral&utm_campaign=shared" target="_blank" rel="noopener">
-        <span>Book with Lobster</span>
-        <span class="btn__price">£80</span>
-      </a>
-    </div>
-
-    <div class="reserve__phone reveal">
-      Or call us · <a href="tel:02030063000">020 3006 3000</a>
-    </div>
+    <ul class="roast__features">
+      <li><strong>Single roast</strong> · beef, pork, chicken or lamb <em>from £28.5pp</em></li>
+      <li><strong>Three Beast Feast</strong> · beef + pork + lamb, to share <em>£37.5pp</em></li>
+      <li><strong>Mini Mary flight</strong> · three Bloody Marys, three ways <em>£12</em></li>
+      <li><strong>Sundays sell out by Friday</strong> · book ahead</li>
+    </ul>
+    <a class="btn btn--ember" href="https://www.opentable.co.uk/r/temper-soho-reservations-london?restref=401976" target="_blank" rel="noopener">
+      <span>Book Sunday</span>
+      <span class="btn__arrow">→</span>
+    </a>
   </div>
 </section>
 
-<!-- ─────────── LOCATION STRIP ─────────── -->
-<div class="location">
-  <div class="location__item">
-    <div class="label">Where</div>
-    <div class="value">Mercers Walk<em>City of London, EC2R 8AY</em></div>
-  </div>
-  <div class="location__item">
-    <div class="label">When</div>
-    <div class="value">Saturday &amp; Sunday<em>11.30 — 3.30 last seating</em></div>
-  </div>
-  <div class="location__item">
-    <div class="label">Nearest</div>
-    <div class="value">Bank · Moorgate<em>5 min from Liverpool Street</em></div>
-  </div>
-  <div class="location__item">
-    <div class="label">Reservations</div>
-    <div class="value">020 3006 3000<em>events@temperrestaurant.com</em></div>
-  </div>
-</div>
-
-<!-- ─────────── FAQ ─────────── -->
-<section class="section" id="faq">
-  <div class="section__inner">
-    <div class="section__head reveal">
-      <div class="section__num">06 — FAQ</div>
-      <h2 class="section__title">Frequently <em>asked.</em></h2>
-    </div>
-
-    <div class="faq__list">
-      <details class="faq__item reveal">
-        <summary>
-          <div class="faq__q">Where can I get a Lobster &amp; Steak Bottomless Brunch in the City of London?</div>
-          <div class="faq__icon">+</div>
-        </summary>
-        <div class="faq__a">temper City serves the Lobster &amp; Steak Bottomless Brunch every Saturday and Sunday from 11.30am, with the last seating at 3.30pm. We're at Mercers Walk in the City of London (EC2R 8AY), a five-minute walk from Bank, Moorgate and Liverpool Street stations.</div>
-      </details>
-
-      <details class="faq__item reveal">
-        <summary>
-          <div class="faq__q">What's the difference between the £70 and £80 boards?</div>
-          <div class="faq__icon">+</div>
-        </summary>
-        <div class="faq__a">The £80 board adds half a grilled Cornish lobster to your surf &amp; turf, plus Aperol Spritz and Margarita on the cocktail list. Both boards include oysters, seared scallop, black tiger prawn, 28-day dry-aged steak, fries, house salad, béarnaise and chimichurri.</div>
-      </details>
-
-      <details class="faq__item reveal">
-        <summary>
-          <div class="faq__q">How long does bottomless last?</div>
-          <div class="faq__icon">+</div>
-        </summary>
-        <div class="faq__a">Drinks are free-flowing for 90 minutes from your booking time. The food courses are paced over the same 90 minutes so you finish with the steak still warm and your glass still full.</div>
-      </details>
-
-      <details class="faq__item reveal">
-        <summary>
-          <div class="faq__q">When is the brunch available?</div>
-          <div class="faq__icon">+</div>
-        </summary>
-        <div class="faq__a">Every Saturday and Sunday at temper City. First seating is at 11.30am and the last seating is at 3.30pm. We recommend booking in advance — Saturday lunchtime slots tend to sell out, especially in the run-up to Christmas and on bank holiday weekends.</div>
-      </details>
-
-      <details class="faq__item reveal">
-        <summary>
-          <div class="faq__q">Can I book for a large group?</div>
-          <div class="faq__icon">+</div>
-        </summary>
-        <div class="faq__a">Yes. Tables of 2–12 can book directly via the website. For groups of 12 or more, please email events@temperrestaurant.com. We regularly host birthday parties, hen dos, corporate brunches and team socials at temper City.</div>
-      </details>
-
-      <details class="faq__item reveal">
-        <summary>
-          <div class="faq__q">Does the whole table need to do bottomless?</div>
-          <div class="faq__icon">+</div>
-        </summary>
-        <div class="faq__a">Yes — bottomless is for the whole party. We're happy to cater for vegetarians, pescatarians and most allergens; please mention any dietary requirements at the time of booking so the kitchen can prepare.</div>
-      </details>
-
-      <details class="faq__item reveal">
-        <summary>
-          <div class="faq__q">What makes temper different from other bottomless brunches in London?</div>
-          <div class="faq__icon">+</div>
-        </summary>
-        <div class="faq__a">temper stands out because we cook everything over fire — giving our bottomless brunch a smoky depth most London brunches can't match. We use British 28-day dry-aged steak, Cornish lobster, hand-shucked oysters and hand-dived scallops rather than standard brunch fare. Add a central City of London location and 90 minutes of generous, unlimited drinks, and it's one of the most distinctive bottomless brunches in the capital.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ─────────── FOOTER ─────────── -->
-<footer class="foot">
-  <div class="foot__inner">
-    <div class="foot__brand-block">
-      <div class="foot__brand">
-        <img src="assets/temper-logo.png" alt="temper" />
-        <div class="foot__brand-city">City</div>
+<!-- ───────────────────── BRUNCH BAND ──────────────────────── -->
+<section class="brunch" id="brunch">
+  <div class="brunch__body reveal">
+    <div class="brunch__eyebrow">Saturdays · Soho · 12pm to 3pm</div>
+    <h2 class="brunch__heading">Brunch with <em>a resident DJ.</em></h2>
+    <p class="brunch__lede">
+      Brunch with attitude, built for long lunches, loud laughs and proper catch-ups. <strong>Handmade tacos, 28-day dry-aged steak, triple smashed cheeseburgers, the temper Benedict</strong> — paired with ninety minutes of free-flowing drinks and a DJ on the decks.
+    </p>
+    <div class="brunch__variants">
+      <div class="brunch__variant">
+        <div class="brunch__variant-label">Classic</div>
+        <div class="brunch__variant-name">Brunch</div>
+        <div class="brunch__variant-price">from £45pp · Prosecco, mimosas, Madri</div>
       </div>
-      <div class="foot__tag">Open fire. Dry-aged steak. Cornish lobster. The best bottomless brunch in the Square Mile, every weekend.</div>
+      <div class="brunch__variant">
+        <div class="brunch__variant-label">Premium</div>
+        <div class="brunch__variant-name">+ Cocktails</div>
+        <div class="brunch__variant-price">£60pp · adds wines &amp; margaritas</div>
+      </div>
+    </div>
+    <div class="brunch__buttons">
+      <a class="btn btn--ember" href="https://www.opentable.co.uk/r/temper-soho-reservations-london?restref=401976" target="_blank" rel="noopener">
+        <span>Book Soho Brunch</span>
+        <span class="btn__arrow">→</span>
+      </a>
+      <a class="btn btn--ghost brunch__secondary" href="lobster-steak-bottomless-brunch.html">
+        <span>Lobster &amp; Steak (City)</span>
+        <span class="btn__arrow">→</span>
+      </a>
+    </div>
+  </div>
+  <div class="brunch__media reveal">
+    <img src="assets/taco-platter.jpg" alt="An overhead spread of handmade tacos served at the temper Soho bottomless brunch" />
+  </div>
+</section>
+
+<!-- ────────────────────── OUR MEAT ──────────────────────── -->
+<section class="meat" id="meat">
+  <div class="meat__body reveal">
+    <div class="meat__eyebrow">02 — Our Meat</div>
+    <h2 class="meat__heading">Rare-breed beef, <em>one farmer,</em> in-house butchery.</h2>
+    <p class="meat__lede">
+      We buy from <strong>one farmer</strong> — Charles Ashbridge in North Yorkshire — and we butcher and age every cut in-house. Since 2016 we've been known for rare-breed beef, bold flavours and live-fire cooking. <strong>It's all f##ing delicious.</strong>
+    </p>
+    <ol class="meat__numbered">
+      <li>
+        <span class="meat__number">01</span>
+        <div>
+          <div class="meat__item-title">Single-farm sourcing</div>
+          <div class="meat__item-detail">One farmer in North Yorkshire. Native cross, Longhorn, Dexter — rare breeds that aren't farmed for scale.</div>
+        </div>
+      </li>
+      <li>
+        <span class="meat__number">02</span>
+        <div>
+          <div class="meat__item-title">In-house butchery</div>
+          <div class="meat__item-detail">28-day minimum, 60-day average dry-aged on the bone. Cut to order.</div>
+        </div>
+      </li>
+      <li>
+        <span class="meat__number">03</span>
+        <div>
+          <div class="meat__item-title">Open fire, no gas</div>
+          <div class="meat__item-detail">A custom fire pit in the middle of every room. No shortcuts.</div>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <div class="meat__media reveal">
+    <img src="assets/butcher.jpg" alt="A temper butcher carrying a whole side of rare-breed beef across his shoulders in the open kitchen" />
+    <div class="meat__media-quote">
+      One of London's most exciting live-fire kitchens.
+      <cite>— Evening Standard</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── TACOS ──────────────────────── -->
+<section class="tacos" id="tacos">
+  <div class="tacos__head reveal">
+    <div class="tacos__eyebrow">03 — Tacos &amp; Margaritas</div>
+    <h2 class="tacos__heading">Two tacos.<br/><em>Twelve fillings.</em><br/>Every day.</h2>
+  </div>
+  <div class="tacos__media-grid">
+    <div class="tacos__media-main reveal">
+      <img src="assets/tacos-overhead.jpg" alt="An overhead spread of temper's handmade tacos with margaritas" />
+    </div>
+    <div class="tacos__media-side reveal">
+      <div><img src="assets/braised-flatbread-1.jpg" alt="A close-up of fire-cooked short rib in chilli sauce on a fresh flatbread" /></div>
+      <div><img src="assets/cocktail-margarita.jpg" alt="A classic salted-rim margarita" /></div>
+    </div>
+  </div>
+  <div class="tacos__detail reveal">
+    <p class="tacos__detail-text">
+      The cheeseburger taco. The short-rib &amp; bone marrow. The smoked cod cheek with pickled pineapple. <em>The cult classics, two per serving.</em>
+    </p>
+    <div class="tacos__detail-meta">
+      <p>Corn tortillas pressed fresh each morning. Fillings spanning smoked lamb (Soho), pulled brisket with beer queso, cheeseburger taco (the cult one), king prawn with 'nduja butter, beef cheek barbacoa, charred aubergine.</p>
+      <p><strong style="color: var(--cream);">Taco Tuesday</strong> — every Tuesday, every taco at £10. Plus margaritas. Soho and the City.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── REVIEWS ────────────────────── -->
+<section class="reviews">
+  <div class="reviews__eyebrow">04 — Loved by Londoners</div>
+  <h2 class="reviews__heading">2,458 <em>five-star</em> reviews.</h2>
+  <p class="reviews__sub">★ 4.6 Google · ★ 4.7 OpenTable · Top 100 OpenTable 2026</p>
+  <div class="reviews__grid">
+    <div class="review reveal">
+      <div class="review__stars">★★★★★</div>
+      <p class="review__body">"Best steak I've ever had. The bone-marrow butter is unreal. Worth every penny."</p>
+      <div class="review__author">Hannah M · Google</div>
+    </div>
+    <div class="review reveal">
+      <div class="review__stars">★★★★★</div>
+      <p class="review__body">"Hands-down the best Sunday roast in London. The Yorkshire is the size of a small dog."</p>
+      <div class="review__author">Sophie R · Google</div>
+    </div>
+    <div class="review reveal">
+      <div class="review__stars">★★★★★</div>
+      <p class="review__body">"Bottomless brunch done properly. Not cheap prosecco. Actually good drinks and brilliant food."</p>
+      <div class="review__author">Priya S · OpenTable</div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────── LOCATIONS ───────────────────── -->
+<section class="locations" id="locations">
+  <div class="locations__head reveal">
+    <div class="locations__eyebrow">05 — Two Rooms</div>
+    <h2 class="locations__heading">Soho or <em>the City.</em></h2>
+    <p class="locations__sub">Same fire philosophy, two different moods. Both a short walk from a Tube.</p>
+  </div>
+  <div class="locations__grid">
+
+    <div class="location reveal">
+      <div class="location__tag">Soho · The Original</div>
+      <h3 class="location__name">temper Soho</h3>
+      <p class="location__addr">25 Broadwick Street, W1F 0DF</p>
+      <p class="location__near">Carnaby St · Oxford Circus · Piccadilly</p>
+      <dl class="location__hours">
+        <dt>Mon</dt><dd>17:00 – 21:00</dd>
+        <dt>Tue – Sat</dt><dd>12:00 – 22:15</dd>
+        <dt>Sun</dt><dd>12:00 – 18:15 · Roast</dd>
+      </dl>
+      <div class="location__actions">
+        <a class="btn btn--ember" href="https://www.opentable.co.uk/r/temper-soho-reservations-london?restref=401976" target="_blank" rel="noopener">
+          <span>Book Soho</span>
+          <span class="btn__arrow">→</span>
+        </a>
+      </div>
+      <div class="location__phone">Or call · <a href="tel:+442038793834">020 3879 3834</a></div>
     </div>
 
-    <div class="foot__col">
-      <div class="foot__col-title">Restaurants</div>
+    <div class="location reveal">
+      <div class="location__tag">The City · Weekday HQ</div>
+      <h3 class="location__name">temper City</h3>
+      <p class="location__addr">2 Angel Court, 30 Throgmorton Street, EC2R 7HJ</p>
+      <p class="location__near">Bank · Moorgate · Liverpool Street</p>
+      <dl class="location__hours">
+        <dt>Mon – Fri</dt><dd>12:00 – 22:15</dd>
+        <dt>Sat</dt><dd>Lobster &amp; Steak brunch</dd>
+        <dt>Sun</dt><dd>Closed</dd>
+      </dl>
+      <div class="location__actions">
+        <a class="btn btn--ember" href="https://www.opentable.co.uk/restaurant/profile/401982/reserve?restref=401982" target="_blank" rel="noopener">
+          <span>Book City</span>
+          <span class="btn__arrow">→</span>
+        </a>
+      </div>
+      <div class="location__phone">Or call · <a href="tel:+442030046984">020 3004 6984</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ──────────────── EXTRAS · GIFT + PRIVATE HIRE ──────────── -->
+<section class="extras">
+  <div class="extra reveal">
+    <div class="extra__tag">Gift Cards</div>
+    <h3 class="extra__title">The right gift <em>for someone</em> who cares what they eat.</h3>
+    <p class="extra__body">£50, £100, £150, £250 — or any amount from £25. Delivered instantly by email. Redeemable across food, drink, brunch and roast at both locations. No expiry for 12 months.</p>
+    <a class="extra__link" href="https://temperrestaurant.com/gifts/" target="_blank" rel="noopener">Buy a gift card</a>
+  </div>
+  <div class="extra reveal">
+    <div class="extra__tag">Private Hire &amp; Events</div>
+    <h3 class="extra__title">Take the <em>whole fire.</em></h3>
+    <p class="extra__body">Private dining rooms, full venue takeovers, corporate catering. Soho up to 190 guests · City buy-out up to 240. Feast menus from £65pp. Plus cocktail masterclasses through <em>temper to you</em>.</p>
+    <a class="extra__link" href="mailto:events@temperrestaurant.com">events@temperrestaurant.com</a>
+  </div>
+</section>
+
+<!-- ──────────────────── NEWSLETTER ─────────────────── -->
+<section class="newsletter">
+  <div class="newsletter__inner">
+    <div class="newsletter__eyebrow">Join the list</div>
+    <h2 class="newsletter__heading">First to the fire.</h2>
+    <p class="newsletter__sub">New cuts on the board, Sunday Roast openings, masterclass dates and members' nights. One short email, never more than two a month.</p>
+    <form class="newsletter__form" onsubmit="event.preventDefault(); this.querySelector('.newsletter__submit').textContent='Thanks ✓';">
+      <input class="newsletter__input" type="email" placeholder="your@email.com" required />
+      <button class="newsletter__submit" type="submit">Sign me up →</button>
+    </form>
+    <div class="newsletter__fine">No spam. Unsubscribe in one click.</div>
+  </div>
+</section>
+
+<!-- ──────────────────── FINAL CTA ──────────────────── -->
+<section class="final-cta" id="book">
+  <div class="final-cta__inner">
+    <div class="final-cta__eyebrow">06 — A table by the fire</div>
+    <h2 class="final-cta__heading">Pull up <em>a chair.</em></h2>
+    <p class="final-cta__sub">Confirmed in seconds. Free to cancel. Parties of 8 or fewer via OpenTable; 9+ via DesignMyNight.</p>
+    <div class="final-cta__buttons">
+      <a class="btn btn--ember" href="https://www.opentable.co.uk/r/temper-soho-reservations-london?restref=401976" target="_blank" rel="noopener">
+        <span>Book Soho</span>
+        <span class="btn__arrow">→</span>
+      </a>
+      <a class="btn btn--ghost" href="https://www.opentable.co.uk/restaurant/profile/401982/reserve?restref=401982" target="_blank" rel="noopener">
+        <span>Book City</span>
+        <span class="btn__arrow">→</span>
+      </a>
+    </div>
+    <p style="font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--cream-mute); margin-top: 36px;">
+      Parties of 9+ ·
+      <a href="https://www.designmynight.com/london/restaurants/soho/temper" target="_blank" rel="noopener" style="color: var(--ember); padding: 0 8px;">Soho</a>
+      ·
+      <a href="https://www.designmynight.com/london/restaurants/city-of-london/temper-city" target="_blank" rel="noopener" style="color: var(--ember); padding: 0 8px;">City</a>
+    </p>
+  </div>
+</section>
+
+<!-- ──────────────────── FOOTER ─────────────────────── -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="assets/temper-logo.png" alt="temper" />
+      <p>Open Fire Steakhouse &amp; BBQ. Two rooms in London. Soho and the City.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Explore</h4>
       <ul>
-        <li><a href="https://temperrestaurant.com/temper-soho/">temper Soho</a></li>
-        <li><a href="https://temperrestaurant.com/temper-city/">temper City</a></li>
-        <li><a href="https://temperrestaurant.com/our-meat/">Our Meat</a></li>
+        <li><a href="#roast">Sunday Roast</a></li>
+        <li><a href="#brunch">Bottomless Brunch</a></li>
+        <li><a href="lobster-steak-bottomless-brunch.html">Lobster &amp; Steak (City)</a></li>
+        <li><a href="#tacos">Taco Tuesday</a></li>
+        <li><a href="#meat">Our Meat</a></li>
       </ul>
     </div>
-
-    <div class="foot__col">
-      <div class="foot__col-title">Bookings</div>
+    <div class="footer__col">
+      <h4>Visit</h4>
       <ul>
-        <li><a href="#reserve">Bottomless Brunch</a></li>
-        <li><a href="https://temperrestaurant.com/sunday-roast/">Sunday Roast</a></li>
-        <li><a href="https://temperrestaurant.com/private-hire/">Private Hire</a></li>
-        <li><a href="https://temperrestaurant.com/gifts/">Gift Cards</a></li>
+        <li>Soho · 25 Broadwick St, W1F</li>
+        <li>City · 2 Angel Court, EC2R</li>
+        <li><a href="tel:+442038793834">020 3879 3834 (Soho)</a></li>
+        <li><a href="tel:+442030046984">020 3004 6984 (City)</a></li>
+        <li><a href="mailto:info@temperrestaurant.com">info@temperrestaurant.com</a></li>
       </ul>
     </div>
-
-    <div class="foot__col">
-      <div class="foot__col-title">Connect</div>
+    <div class="footer__col">
+      <h4>Follow</h4>
       <ul>
-        <li><a href="https://www.instagram.com/temperrestaurant/">Instagram ↗</a></li>
-        <li><a href="https://www.facebook.com/temperrestaurant/">Facebook ↗</a></li>
-        <li><a href="https://temperrestaurant.com/contact-us/">Contact</a></li>
+        <li><a href="https://www.instagram.com/temperrestaurant/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/temperrestaurant/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://temperrestaurant.com/gifts/" target="_blank" rel="noopener">Gift Cards</a></li>
+        <li><a href="mailto:events@temperrestaurant.com">Private Hire</a></li>
       </ul>
     </div>
   </div>
-
-  <div class="foot__bottom">
-    <div>© temper restaurant · <span id="year"></span></div>
-    <div>Mercers Walk · City of London · EC2R 8AY</div>
+  <div class="footer__base">
+    <div>© temper Restaurants 2026</div>
+    <div class="footer__base-links">
+      <a href="#">Privacy</a>
+      <a href="#">Cookies</a>
+      <a href="#">Terms</a>
+      <a href="mailto:info@temperrestaurant.com">Contact</a>
+    </div>
   </div>
 </footer>
 
 <script>
-  // hero video — fade out poster once playing; pause when off-screen for performance;
-  // respect prefers-reduced-motion
-  const heroMedia = document.getElementById('heroMedia');
-  const heroVideo = heroMedia ? heroMedia.querySelector('video') : null;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (heroVideo) {
-    if (reducedMotion) {
-      // user prefers reduced motion — keep the still poster, don't play video
-      heroVideo.removeAttribute('autoplay');
-    } else {
-      heroVideo.addEventListener('playing', () => {
-        heroMedia.classList.add('video-ready');
-      }, { once: true });
-      // fallback: if 'playing' never fires (some mobile browsers), reveal on canplay
-      heroVideo.addEventListener('canplay', () => {
-        setTimeout(() => heroMedia.classList.add('video-ready'), 200);
-      }, { once: true });
-      // pause when scrolled fully out of view to save battery
-      const heroVideoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) heroVideo.play().catch(() => {});
-          else heroVideo.pause();
-        });
-      }, { threshold: 0 });
-      heroVideoObserver.observe(heroMedia);
-    }
-  }
-
-  // nav scroll state
+  // Nav scrolled state
   const nav = document.getElementById('nav');
-  const stickyBook = document.getElementById('stickyBook');
-  const hero = document.querySelector('.hero');
-  const reserveSection = document.getElementById('reserve');
-
-  // sticky-book visibility: show once user scrolls past hero, hide when reserve is in view
-  let reserveInView = false;
-
-  // detect when reserve section enters viewport
-  const reserveObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { reserveInView = entry.isIntersecting; updateStickyBook(); });
-  }, { threshold: 0.15 });
-  if (reserveSection) reserveObserver.observe(reserveSection);
-
-  function updateStickyBook() {
-    const heroBottom = hero ? hero.getBoundingClientRect().bottom : 600;
-    const pastHero = heroBottom < 80;
-    const shouldShow = pastHero && !reserveInView;
-
-    if (shouldShow) {
-      stickyBook.classList.add('is-visible');
-      stickyBook.setAttribute('aria-hidden', 'false');
-      nav.classList.add('is-hidden');
-    } else {
-      stickyBook.classList.remove('is-visible');
-      stickyBook.setAttribute('aria-hidden', 'true');
-      nav.classList.remove('is-hidden');
-    }
-  }
-
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-    updateStickyBook();
-  }, { passive: true });
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        nav.classList.toggle('scrolled', window.scrollY > 80);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
 
-  // reveal-on-scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Reveal-on-scroll
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(el => obs.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in-view'));
+  }
 </script>
 
 </body>
