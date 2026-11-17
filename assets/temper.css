@@ -463,3 +463,19 @@ video.vid{width:100%;height:100%;object-fit:cover;object-position:var(--pos,cent
 .mega__card b{display:block;font-family:var(--display);font-weight:700;font-size:20px;line-height:1.05;letter-spacing:-.01em;text-transform:none}
 .mega__card small{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-60);margin-top:6px;font-weight:500}
 .mega__card:hover b{color:var(--ember)}
+
+/* mobile: one job per screen */
+@media(max-width:700px){
+  .m-hide{display:none!important}
+  .sec{padding:56px 18px}
+  .grid2{gap:22px}
+  .quote{min-height:0;padding:70px 18px}
+  .quote blockquote{font-size:clamp(72px,24vw,120px)}
+  .quote .press{margin-top:40px;gap:18px 14px}
+  .rooms .room{min-height:380px}
+  .room__in p{display:none}
+  .cs-home .btns .btn:nth-child(n+2){display:none}
+  .cs-marquee{margin-top:30px;padding:16px 0}
+  .book{padding:60px 18px 70px}
+  .hero--home h1{font-size:clamp(56px,17vw,96px)}
+}
