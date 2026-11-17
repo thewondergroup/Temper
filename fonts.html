@@ -165,8 +165,8 @@ const cd=document.querySelector('.count');if(cd){const tick=()=>{const n=new Dat
 const pk=document.querySelector('.picker');if(pk){const r=pk.querySelector('input'),o=pk.querySelector('output'),s=pk.querySelector('.sug');const f=()=>{const v=+r.value;o.textContent=v;let m;if(v<=8)m='<b>Book online.</b> Up to eight goes straight through OpenTable.';else if(v<=20)m='<b>Soho private dining room.</b> Behind the curtain, seats 20. Or a long table at City.';else if(v<=50)m='<b>City mezzanine.</b> Seats 50 with its own bar and staircase.';else if(v<=70)m='<b>City mezzanine, standing.</b> Seventy with the bar running.';else if(v<=190)m='<b>Whole of Soho.</b> About 190, fire and all.';else m='<b>Whole of City.</b> Up to 240 across both floors.';s.innerHTML=m};r.oninput=f;f()}
 })();
 </script><div class="fsw" id="fsw">
-<button data-f="fraunces" data-d="'Fraunces',serif" data-b="'Manrope',sans-serif" class="on">A · Fraunces<small>current · editorial, soft</small></button>
-<button data-f="playfair" data-d="'Playfair Display',serif" data-b="'Inter',sans-serif">B · Playfair<small>classic steakhouse</small></button>
+<button data-f="fraunces" data-d="'Fraunces',serif" data-b="'Manrope',sans-serif" >A · Fraunces<small>editorial, soft</small></button>
+<button data-f="playfair" data-d="'Playfair Display',serif" data-b="'Inter',sans-serif"class="on">B · Playfair<small>current · classic steakhouse</small></button>
 <button data-f="bodoni" data-d="'Bodoni Moda',serif" data-b="'DM Sans',sans-serif">C · Bodoni<small>fashion, high contrast</small></button>
 <button data-f="cormorant" data-d="'Cormorant Garamond',serif" data-b="'DM Sans',sans-serif">D · Cormorant<small>light, sexy, quiet</small></button>
 <button data-f="dmserif" data-d="'DM Serif Display',serif" data-b="'DM Sans',sans-serif">E · DM Serif<small>sharp modern serif</small></button>
