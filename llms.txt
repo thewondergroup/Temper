@@ -17,7 +17,7 @@
 - [temper Soho](https://thewondergroup.github.io/Temper/temper-soho.html) · [Soho menu](https://thewondergroup.github.io/Temper/temper-soho-menu.html)
 - [temper City](https://thewondergroup.github.io/Temper/temper-city.html) · [City menu](https://thewondergroup.github.io/Temper/temper-city-menu.html)
 - [Sunday Roast](https://thewondergroup.github.io/Temper/sunday-roast.html)
-- [Bottomless Brunch](https://thewondergroup.github.io/Temper/bottomless-brunch.html) · [Lobster & Steak Brunch](https://thewondergroup.github.io/Temper/lobster-steak-bottomless-brunch.html)
+- [Bottomless Brunch](https://thewondergroup.github.io/Temper/bottomless-brunch.html) · [Lobster & Steak Bottomless Brunch](https://thewondergroup.github.io/Temper/lobster-steak-bottomless-brunch.html)
 - [Taco Tuesday](https://thewondergroup.github.io/Temper/taco-tuesday.html)
 - [Butchery masterclass](https://thewondergroup.github.io/Temper/butchery-and-barbecue-masterclasses.html)
 - [Feast menus](https://thewondergroup.github.io/Temper/feast-soho.html) · [Private hire](https://thewondergroup.github.io/Temper/private-hire.html)
