@@ -92,7 +92,8 @@ h3.disp{font-size:clamp(28px,3vw,44px);letter-spacing:-.02em}
 .nav__menu .sub a{display:block;padding:11px 22px;color:var(--ink);white-space:nowrap;font-weight:500}
 .nav__menu .sub a:hover{background:var(--paper-2);color:var(--ember)}
 .nav__menu .sub a small{display:block;font-size:9px;letter-spacing:.14em;color:var(--ink-40);margin-top:3px;font-weight:400}
-.nav__menu .cs{color:#f2c14e!important}
+.nav__menu .cs{color:#f2c14e!important;font-family:"Anton",Impact,sans-serif!important;font-weight:400!important;font-size:14px!important;letter-spacing:.08em!important;text-transform:uppercase}
+.drawer .cs{font-family:"Anton",Impact,sans-serif!important;color:#f2c14e!important;letter-spacing:.04em}
 .nav__cta{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:11px 18px;background:var(--ember);color:var(--char);font-weight:600;white-space:nowrap;transition:transform .2s,background .2s}
 .nav__cta:hover{background:var(--ember-hi);transform:translateY(-1px)}
 .nav__burger{display:none;background:none;border:0;color:var(--bone);cursor:pointer;padding:10px 0 10px 10px;align-items:center}
