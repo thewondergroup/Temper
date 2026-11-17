@@ -441,3 +441,22 @@ video.vid{width:100%;height:100%;object-fit:cover;object-position:var(--pos,cent
 
 .nav__menu .cs .new{display:inline-block;vertical-align:2px;margin-left:8px;background:#d8242a;color:#fff;font-family:"Anton",Impact,sans-serif;font-style:normal;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 5px 2px;line-height:1;border-radius:2px}
 .drawer .cs .new{display:inline-block;margin-left:8px;background:#d8242a;color:#fff;font-style:normal;font-size:10px;letter-spacing:.1em;padding:3px 5px 2px;line-height:1;vertical-align:middle;border-radius:2px}
+
+/* mega menus */
+.nav__menu .has-sub{position:static}
+.nav__menu .mega{position:absolute;left:0;right:0;top:100%;display:none;padding-top:0}
+.nav__menu .has-sub:hover .mega,.nav__menu .has-sub:focus-within .mega{display:block}
+.mega__in{background:var(--paper);border-top:1px solid var(--bone-12);border-bottom:1px solid var(--bone-12);box-shadow:0 30px 60px rgba(0,0,0,.55);display:grid;grid-template-columns:300px 1fr;gap:40px;padding:34px 60px 38px;max-width:1500px;margin:0 auto}
+.mega__intro h4{font-family:var(--display);font-weight:700;font-size:34px;line-height:1;letter-spacing:-.02em;margin:14px 0 18px;text-transform:none}
+.mega__intro h4 em{font-style:italic;font-weight:400;color:var(--ember)}
+.mega__links{display:flex;flex-direction:column;gap:2px}
+.mega__links a{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-60);padding:7px 0;border-bottom:1px solid var(--bone-12);font-weight:500}
+.mega__links a:hover{color:var(--ember)}
+.mega__cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mega__card{display:block;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--char-2);border:1px solid var(--bone-12)}
+.mega__card img{width:100%;height:100%;object-fit:cover;opacity:.8;transition:transform 1s var(--ease),opacity .4s}
+.mega__card:hover img{transform:scale(1.06);opacity:1}
+.mega__card span{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 16px;background:linear-gradient(transparent,rgba(11,10,12,.95));color:var(--bone)}
+.mega__card b{display:block;font-family:var(--display);font-weight:700;font-size:20px;line-height:1.05;letter-spacing:-.01em;text-transform:none}
+.mega__card small{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-60);margin-top:6px;font-weight:500}
+.mega__card:hover b{color:var(--ember)}
