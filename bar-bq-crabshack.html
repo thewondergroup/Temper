@@ -291,6 +291,18 @@ h1,h2,h3,h4,.head{font-family:var(--head);font-weight:700;text-transform:upperca
 .csdrawer .temper a{color:var(--ink);text-decoration:underline}
 @media(max-width:900px){.nav__burger{display:flex}}
 body.nolock{overflow:hidden}
+
+/* menu badges from the printed menu */
+.sec__title span{display:none}
+.sec__title{transform:none;margin:-54px 0 6px;min-height:0}
+.sec__title img{height:150px;width:auto;max-width:86%;object-fit:contain;background:var(--paper);padding:0 16px}
+.sec__title img.wide{height:84px}
+.hero__badge{position:absolute;z-index:3;width:min(26vw,260px);opacity:.92;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+.hero__badge--a{right:5%;top:40%;transform:rotate(6deg)}
+.hero__badge--b{left:4%;bottom:14%;transform:rotate(-5deg);width:min(22vw,200px)}
+.rooms__mark{display:block;width:260px;max-width:60%;margin:0 auto 26px}
+.hits__mark{display:block;width:220px;max-width:55%;margin:0 auto 10px}
+@media(max-width:700px){.sec__title img{height:120px}.sec__title img.wide{height:66px}.hero__badge{width:38vw}.hero__badge--b{display:none}.hero__badge--a{top:30%;right:4%;width:34vw}}
 </style>
 <style>
 /* landing-only */
@@ -346,7 +358,7 @@ body.nolock{overflow:hidden}
 </div>
 <div style="height:var(--navh,76px)"></div>
 
-<section class="hero" id="top">
+<section class="hero" id="top"><img class="hero__badge hero__badge--a" src="assets/cs-badges/genuine-article-cream.png" alt="" />
   <img class="hero__poster" src="assets/cs-hero-poster.jpg" alt="" aria-hidden="true" />
   <video autoplay muted loop playsinline poster="assets/cs-hero-poster.jpg" preload="metadata"><source src="assets/hero.mp4" type="video/mp4" /></video>
   <span class="stamp stamp--a">Bibs provided</span>
@@ -400,6 +412,7 @@ body.nolock{overflow:hidden}
 </section>
 
 <section class="taste" id="taste">
+  <img class="hits__mark reveal" src="assets/cs-badges/small-plates.png" alt="" style="width:300px" />
   <h2 class="reveal">Small plates, <span class="script">big taste</span></h2>
   <div class="taste__row reveal">
     <span>Smash Cheeseburger <b>£14.50</b></span><span>Sliced Brisket <b>£25.90</b></span><span>Rack of Ribs <b>½ £16</b></span><span>Soft Shell Crab Burger <b>£17</b></span><span>Southern Fried Prawns <b>£12.50</b></span><span>Jumbo Lobster <b>½ £35</b></span><span>Surf &amp; Turf Platter <b>to share</b></span><span>Frozen Raspberry Margarita <b>£12</b></span><span>Pickle Jack <b>£5.95</b></span>
@@ -409,7 +422,7 @@ body.nolock{overflow:hidden}
 
 <!-- ───── HITS ───── -->
 <section class="hits">
-  <div class="hits__head reveal"><h2>Order these <span class="script">first</span></h2></div>
+  <div class="hits__head reveal"><img class="hits__mark" src="assets/cs-badges/king-of-meat.png" alt="" /><h2>Order these <span class="script">first</span></h2></div>
   <div class="hits__row">
     <div class="pol reveal" style="--r:-4deg"><span class="tape"></span><span class="price">£14.50</span><img src="assets/burger-fries.jpg" alt="Smash cheeseburger and fries" /><h4>Smash Cheeseburger</h4><p>Burger City's finest. Two hands minimum.</p></div>
     <div class="pol reveal" style="--r:2deg"><span class="tape"></span><span class="price">½ £35</span><img src="assets/lobster-fries.jpg" alt="Half jumbo lobster with fries" /><h4>Jumbo Lobster</h4><p>Fresh daily, split, buttered. Bib's in the drawer.</p></div>
