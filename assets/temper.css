@@ -437,3 +437,5 @@ video.vid{width:100%;height:100%;object-fit:cover;object-position:var(--pos,cent
 @keyframes csm{to{transform:translateX(-50%)}}
 @media(max-width:900px){.cs-home__img{aspect-ratio:4/3}.cs-marquee__track img{height:76px}.cs-marquee__track{gap:44px}.cs-marquee{margin-top:44px}}
 @media(prefers-reduced-motion){.cs-marquee__track{animation:none}}
+
+.nav__menu .cs{position:relative}.nav__menu .cs .new{position:absolute;top:-11px;right:-22px;background:#d8242a;color:#fff;font-family:"Anton",Impact,sans-serif;font-style:normal;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 5px 2px;line-height:1;transform:rotate(8deg)}
