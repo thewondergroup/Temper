@@ -412,3 +412,5 @@ body::after{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;op
 .kicker,.btn,.nav__menu,.hero__meta,.mcard__note,.card h4,.card dl,.tile__meta,.tile__cta,.footer h4,.footer__base,.bw label,.bw__note,.bw button,.man__n,.quote cite,.room__meta,.press span,.press small,.mono,.count span,.drawer__group h5,.toggle button,.deal__ribbon,.deal small,.stat span,.faq summary small{font-weight:500}
 .nav__menu>a,.nav__menu .has-sub>a{font-weight:500;letter-spacing:.18em;font-size:11px}
 .mitem .p{font-family:var(--body);font-weight:500;letter-spacing:.02em}
+.man__img--v video{width:100%;height:100%;object-fit:cover;display:block}
+video.vid{width:100%;height:100%;object-fit:cover;object-position:var(--pos,center);display:block;background:var(--char)}
