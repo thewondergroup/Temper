@@ -272,6 +272,26 @@ h1,h2,h3,h4,.head{font-family:var(--head);font-weight:700;text-transform:upperca
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* burger + drawer */
+.nav__burger{display:none;background:none;border:0;cursor:pointer;padding:8px 0 8px 10px;align-items:center}
+.nav__burger i{display:block;width:26px;height:3px;background:var(--ink);box-shadow:0 -8px 0 var(--ink),0 8px 0 var(--ink)}
+.nav__right{display:flex;align-items:center;gap:14px}
+.csdrawer{position:fixed;inset:0;z-index:80;background:var(--paper);color:var(--ink);transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);padding:calc(16px + env(safe-area-inset-top)) 22px 40px;overflow-y:auto;display:flex;flex-direction:column}
+.csdrawer.open{transform:none}
+.csdrawer__top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.csdrawer__top img{height:34px}
+.csdrawer__close{background:none;border:0;font-family:var(--head);font-size:14px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;color:var(--ink)}
+.csdrawer h5{font-family:var(--head);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin:26px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.csdrawer a.big{display:block;font-family:var(--head);font-size:34px;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;padding:9px 0}
+.csdrawer a.big small{display:block;font-family:var(--type);text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink-60);margin-top:2px}
+.csdrawer a.sm{display:block;font-family:var(--head);font-size:18px;letter-spacing:.08em;text-transform:uppercase;padding:9px 0}
+.csdrawer .cta{margin-top:auto;padding-top:30px}
+.csdrawer .cta a{display:block;text-align:center;font-family:var(--head);font-size:16px;letter-spacing:.1em;text-transform:uppercase;padding:18px;background:var(--red);color:var(--cream)}
+.csdrawer .temper{font-family:var(--type);font-size:13px;color:var(--ink-60);margin-top:16px}
+.csdrawer .temper a{color:var(--ink);text-decoration:underline}
+@media(max-width:900px){.nav__burger{display:flex}}
+body.nolock{overflow:hidden}
 </style>
 </head>
 <body>
@@ -281,9 +301,21 @@ h1,h2,h3,h4,.head{font-family:var(--head);font-weight:700;text-transform:upperca
   <div class="nav__menu">
     <a href="#menu">The Menu</a><a href="#room">The Room</a><a href="#music">The Band</a><a href="#brunch">Brunch</a><a href="#visit">Find Us</a>
   </div>
-  <a class="nav__cta" href="#list">Get in first</a>
+  <div class="nav__right"><a class="nav__cta" href="#list">Get in first</a><button class="nav__burger" data-open aria-label="Menu"><i></i></button></div>
 </nav>
-<div style="height:76px"></div>
+<div class="csdrawer" id="csdrawer" aria-hidden="true">
+  <div class="csdrawer__top"><img src="assets/cs-logo-red.png" alt="" /><button class="csdrawer__close" data-close>Close ✕</button></div>
+  <h5>The rooms</h5>
+  <a class="big" href="bar-bq-crabshack-covent-garden.html">Covent Garden<small>12 Maiden Lane, WC2 · opening soon</small></a>
+  <a class="big" href="bar-bq-crabshack-kings-road.html">King's Road<small>332-334 King's Road, SW3 · opening soon</small></a>
+  <h5>This page</h5><a class="sm" href="#menu">The Menu</a><a class="sm" href="#room">The Room</a><a class="sm" href="#music">The Band</a><a class="sm" href="#brunch">Brunch</a><a class="sm" href="#visit">Find us</a>
+  <h5>temper</h5>
+  <a class="sm" href="bar-bq-crabshack.html">Bar-B-Q &amp; Crabshack</a>
+  <a class="sm" href="temper-soho.html">temper Soho</a>
+  <a class="sm" href="temper-city.html">temper City</a>
+  <div class="cta"><a href="#list" data-close>Get in first</a><p class="temper">Part of the temper family · <a href="index.html">temperrestaurant.com</a></p></div>
+</div>
+<div style="height:var(--navh,76px)"></div>
 
 <!-- ───── HERO ───── -->
 <section class="hero" id="top">
@@ -545,6 +577,13 @@ h1,h2,h3,h4,.head{font-family:var(--head);font-weight:700;text-transform:upperca
   vid.addEventListener('canplay',()=>hero.classList.add('ready'),{once:true});
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+<script>
+(function(){var n=document.getElementById('nav');function h(){document.documentElement.style.setProperty('--navh',n.offsetHeight+'px')}h();addEventListener('resize',h);addEventListener('load',h);
+var d=document.getElementById('csdrawer');document.querySelectorAll('[data-open]').forEach(function(b){b.onclick=function(){d.classList.add('open');document.body.classList.add('nolock')}});
+document.querySelectorAll('[data-close]').forEach(function(b){b.onclick=function(){d.classList.remove('open');document.body.classList.remove('nolock')}});
+d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){d.classList.remove('open');document.body.classList.remove('nolock')})});})();
 </script>
 </body>
 </html>
