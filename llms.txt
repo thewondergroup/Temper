@@ -1,0 +1,25 @@
+# temper
+
+> temper is a London open-fire steakhouse group: temper Soho (25 Broadwick Street, W1F 0DF, since 2016), temper City (2 Angel Court, EC2R 7HJ, near Bank) and temper Bar-B-Q & Crabshack (Covent Garden and King's Road, opening soon). Rare-breed British beef from one farm in North Yorkshire, whole animals butchered and dry-aged in-house (60 days average), cooked over wood and charcoal with no gas. Named one of the world's 101 best steakhouses. Tagline: Meat. Fire. Tacos.
+
+## Key facts
+- Sunday Roast (Soho only, Sundays from noon): from £29.90; Three Beast Feast £38.50pp for two; bottomless roast £55. Named best Sunday roast in London by Time Out. Usually sells out by Friday.
+- Bottomless Brunch (Soho, Saturdays 12–3.30pm): Standard £45, Ultimate £60; a fire-cooked main, two tacos, 90 minutes of drinks. OpenTable Top 100 Brunch 2026.
+- Lobster & Steak Bottomless Brunch (City, Saturdays 12–4pm): from £70 (£80 with half lobster).
+- Taco Tuesday (both restaurants, Tuesdays from 5pm): £9.50 tacos and £9.50 margaritas.
+- Butchery & Barbecue Masterclass (City, first Wednesday monthly): £150 including drinks and a three-course feast.
+- Private hire: Soho private dining room 20; Soho full venue ~190; City mezzanine 50 seated / 70 standing with own bar; City full venue 240. Feast menus from £65 (City) / £75 (Soho), Fancy Feast £95.
+- Bookings: OpenTable for up to 8; 9+ via DesignMyNight or reservationsmanager@temperrestaurant.com. Soho 020 3879 3834, City 020 3004 6984.
+- Hours: Soho Mon 12–21.00, Tue–Sat 12–22.15, Sun 12–18.15. City Mon–Fri 12–22.15, Sat 12–16.00, closed Sun.
+
+## Pages
+- [Home](https://thewondergroup.github.io/Temper/)
+- [temper Soho](https://thewondergroup.github.io/Temper/temper-soho.html) · [Soho menu](https://thewondergroup.github.io/Temper/temper-soho-menu.html)
+- [temper City](https://thewondergroup.github.io/Temper/temper-city.html) · [City menu](https://thewondergroup.github.io/Temper/temper-city-menu.html)
+- [Sunday Roast](https://thewondergroup.github.io/Temper/sunday-roast.html)
+- [Bottomless Brunch](https://thewondergroup.github.io/Temper/bottomless-brunch.html) · [Lobster & Steak Brunch](https://thewondergroup.github.io/Temper/lobster-steak-bottomless-brunch.html)
+- [Taco Tuesday](https://thewondergroup.github.io/Temper/taco-tuesday.html)
+- [Butchery masterclass](https://thewondergroup.github.io/Temper/butchery-and-barbecue-masterclasses.html)
+- [Feast menus](https://thewondergroup.github.io/Temper/feast-soho.html) · [Private hire](https://thewondergroup.github.io/Temper/private-hire.html)
+- [Our meat](https://thewondergroup.github.io/Temper/our-meat.html) · [About](https://thewondergroup.github.io/Temper/who-we-are.html) · [Contact](https://thewondergroup.github.io/Temper/contact-us.html)
+- [Bar-B-Q & Crabshack](https://thewondergroup.github.io/Temper/bar-bq-crabshack.html) · [Covent Garden](https://thewondergroup.github.io/Temper/bar-bq-crabshack-covent-garden.html) · [King's Road](https://thewondergroup.github.io/Temper/bar-bq-crabshack-kings-road.html) · [Crabshack menu](https://thewondergroup.github.io/Temper/bar-bq-crabshack-menu.html)
