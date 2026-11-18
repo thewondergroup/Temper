@@ -497,3 +497,5 @@ video.vid{width:100%;height:100%;object-fit:cover;object-position:var(--pos,cent
 .room:hover img{transform:none;opacity:1}
 .room{overflow:hidden}.room img{transition:transform 1.2s var(--ease)}.room:hover img{transform:scale(1.04)}
 @media(max-width:900px){.room img{height:240px}.room__in{padding:22px 20px 26px}.room__in p{display:none}}
+
+@media(min-width:901px) and (max-width:1360px){.nav__menu{gap:16px}.nav__menu>a,.nav__menu .has-sub>a{font-size:10px;letter-spacing:.12em}.nav__menu .cs{font-size:12px!important}.nav{padding-left:28px;padding-right:28px}}
