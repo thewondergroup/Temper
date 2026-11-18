@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /fonts.html
+Disallow: /gold.html
 
 User-agent: GPTBot
 Allow: /

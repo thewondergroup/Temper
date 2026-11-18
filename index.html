@@ -154,5 +154,6 @@ const cd=document.querySelector('.count');if(cd){const tick=()=>{const n=new Dat
 // capacity picker
 const pk=document.querySelector('.picker');if(pk){const r=pk.querySelector('input'),o=pk.querySelector('output'),s=pk.querySelector('.sug');const f=()=>{const v=+r.value;o.textContent=v;let m;if(v<=8)m='<b>Book online.</b> Up to eight goes straight through OpenTable.';else if(v<=20)m='<b>Soho private dining room.</b> Behind the curtain, seats 20. Or a long table at City.';else if(v<=50)m='<b>City mezzanine.</b> Seats 50 with its own bar and staircase.';else if(v<=70)m='<b>City mezzanine, standing.</b> Seventy with the bar running.';else if(v<=190)m='<b>Whole of Soho.</b> About 190, fire and all.';else m='<b>Whole of City.</b> Up to 240 across both floors.';s.innerHTML=m};r.oninput=f;f()}
 })();
-</script></body>
+</script><style>.gsw{position:fixed;left:50%;bottom:calc(74px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:300;display:flex;border:1px solid rgba(245,237,224,.3);background:#0b0a0c;font-family:Inter,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase}.gsw a{padding:10px 16px;color:#f5ede0}.gsw a.on{background:#f5ede0;color:#0b0a0c}@media(min-width:901px){.gsw{bottom:24px}}</style>
+<div class="gsw"><a href="index.html" class="on">Orange</a><a href="gold.html">Gold</a></div></body>
 </html>
