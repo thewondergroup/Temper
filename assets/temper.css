@@ -499,3 +499,48 @@ video.vid{width:100%;height:100%;object-fit:cover;object-position:var(--pos,cent
 @media(max-width:900px){.room img{height:240px}.room__in{padding:22px 20px 26px}.room__in p{display:none}}
 
 @media(min-width:901px) and (max-width:1360px){.nav__menu{gap:16px}.nav__menu>a,.nav__menu .has-sub>a{font-size:10px;letter-spacing:.12em}.nav__menu .cs{font-size:12px!important}.nav{padding-left:28px;padding-right:28px}}
+/* brunch boards */
+.bboards{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.bboard{position:relative;border:1px solid var(--bone-12);background:var(--paper);padding:38px 36px 34px;display:flex;flex-direction:column}
+.bboard.hot{border-color:var(--ember);background:linear-gradient(170deg,rgba(217,74,28,.2),transparent 50%),var(--char-2)}
+.bboard__tag{position:absolute;top:-13px;left:28px;background:var(--ember);color:var(--char);font-size:9px;letter-spacing:.25em;text-transform:uppercase;padding:7px 12px;font-weight:600}
+.bboard__label{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--bone-60);font-weight:500}
+.bboard__price{font-family:var(--display);font-weight:700;font-size:clamp(60px,6vw,92px);line-height:1;letter-spacing:-.04em;margin:10px 0 2px}
+.bboard__price small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-family:var(--body);font-weight:500;color:var(--bone-60);margin-left:12px}
+.bboard__sub{font-family:var(--display);font-style:italic;font-size:19px;color:var(--bone-60);margin-bottom:26px}
+.bboard h5{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ember);margin:22px 0 8px;font-weight:600}
+.bboard ul{list-style:none;border-top:1px solid var(--bone-12)}
+.bboard li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--bone-12);font-size:15px}
+.bboard li b{font-weight:500}.bboard li span{font-family:var(--display);font-style:italic;color:var(--bone-60);text-align:right}
+.bboard li.up b{color:var(--ember)}
+.bboard .btns{margin-top:auto;padding-top:30px}
+@media(max-width:900px){.bboards{grid-template-columns:1fr}.bboard{padding:30px 22px 28px}}
+/* venue switch */
+.vswitch{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bone-12);border:1px solid var(--bone-12);max-width:900px;margin:0 auto}
+.vswitch button{background:var(--char-2);border:0;color:var(--bone);text-align:left;padding:22px 26px;cursor:pointer;display:grid;gap:4px;transition:background .3s}
+.vswitch button b{font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:-.02em;line-height:1}
+.vswitch button b em{font-style:italic;font-weight:400;color:var(--ember)}
+.vswitch button small{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-60);font-weight:500}
+.vswitch button.on{background:var(--ember);color:var(--char)}
+.vswitch button.on b em,.vswitch button.on small{color:var(--char);opacity:.8}
+.vpanel{max-width:900px;margin:18px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bone-12);border:1px solid var(--bone-12)}
+.vpanel>div{background:var(--paper);padding:18px 22px}
+.vpanel h6{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--bone-40);margin-bottom:8px;font-weight:600}
+.vpanel p{font-size:15px;line-height:1.5}.vpanel p b{font-weight:500}
+@media(max-width:700px){.vpanel{grid-template-columns:1fr}.vswitch button b{font-size:22px}}
+/* food photo cards */
+.foods{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.food{position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--bone-12)}
+.food img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.food:hover img{transform:scale(1.05)}
+.food span{position:absolute;left:0;right:0;bottom:0;padding:60px 22px 22px;background:linear-gradient(transparent,rgba(11,10,12,.95))}
+.food b{display:block;font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;line-height:1.05}
+.food small{display:block;font-family:var(--display);font-style:italic;color:var(--bone-60);font-size:15px;margin-top:6px}
+@media(max-width:700px){.foods{grid-template-columns:1fr 1fr}.food:last-child{grid-column:span 2;aspect-ratio:16/9}}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bone-12);border:1px solid var(--bone-12)}
+.step{background:var(--char);padding:34px 30px}
+.step i{display:block;font-family:var(--display);font-style:italic;font-size:44px;color:var(--ember);line-height:1;margin-bottom:16px}
+.step b{display:block;font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.02em;margin-bottom:10px}
+.step p{color:var(--bone-60);font-size:15px;line-height:1.6}
+@media(max-width:700px){.steps{grid-template-columns:1fr}}
