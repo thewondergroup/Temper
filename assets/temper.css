@@ -547,4 +547,4 @@ video.vid{width:100%;height:100%;object-fit:cover;object-position:var(--pos,cent
 
 /* gold: italic headline words one shade lighter for hierarchy; status green softer */
 .disp em,.hero h1 em,.man__row h3 em,.room__in h3 em,.tile__title em,.mega__intro h4 em,.vswitch button b em,.bleed__cap h2 em,.quote cite{color:#d6b08a}
-.open{color:#8fd19a}
+[data-hours] span.open{color:#8fd19a}
