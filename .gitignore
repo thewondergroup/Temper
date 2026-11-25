@@ -1,0 +1,2 @@
+# Form handler secrets must never be committed
+*.env

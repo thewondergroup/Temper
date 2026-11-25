@@ -27,6 +27,10 @@
 .btn--solid{background:var(--ember);border:2px solid var(--ember);color:var(--char);justify-self:start;cursor:pointer}
 .btn--solid:hover{background:var(--ember-hi);border-color:var(--ember-hi)}
 @media(max-width:700px){.enquiry__form{grid-template-columns:1fr}}
+.enquiry__form .form-status{grid-column:1/-1;margin:0;font-size:15px;line-height:1.5;border-left:2px solid var(--ember);padding-left:12px}
+.enquiry__form .form-status[hidden]{display:none}
+.enquiry__form .form-status.is-error{color:var(--ember)}
+@media(max-width:900px){.grecaptcha-badge{bottom:76px!important}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&amp;display=swap" rel="stylesheet" />
 <style>@media(max-width:700px){.footer__base>*:first-child{display:block!important}.wonder-credit{display:block!important;margin:8px 0 0!important}}</style>
@@ -75,10 +79,13 @@
 <form
 				class="enquiry__form"
 				method="post"
-				action=""
+				action="api/enquiry.php"
 				id="contact-form"
 				data-form-submit
+				data-recaptcha-action="contact"
+				data-recaptcha-site-key="6LfRsfMsAAAAALpvqNKIwMM5LdNyrLF70owsJbYa"
 			>
+				<input type="hidden" name="form_type" value="contact" />
 				<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" value="" />
 				<div>
 					<label for="cf-name">Name</label>
@@ -97,6 +104,7 @@
 					<textarea id="cf-message" name="message" rows="4" required></textarea>
 				</div>
 				<button type="submit" class="btn btn--solid" id="contact-form-submit" data-form-submit-btn data-submit-label="Send message" data-submit-loading="Sending…">Send message</button>
+				<p class="form-status" data-form-status role="status" hidden></p>
 			</form></div></section>
 <section class="book dark" id="book">
   <div class="book__in">
@@ -140,9 +148,6 @@ const cd=document.querySelector('.count');if(cd){const tick=()=>{const n=new Dat
 // capacity picker
 const pk=document.querySelector('.picker');if(pk){const r=pk.querySelector('input'),o=pk.querySelector('output'),s=pk.querySelector('.sug');const f=()=>{const v=+r.value;o.textContent=v;let m;if(v<=8)m='<b>Book online.</b> Up to eight goes straight through OpenTable.';else if(v<=20)m='<b>Soho private dining room.</b> Behind the curtain, seats 20. Or a long table at City.';else if(v<=50)m='<b>City mezzanine.</b> Seats 50 with its own bar and staircase.';else if(v<=70)m='<b>City mezzanine, standing.</b> Seventy with the bar running.';else if(v<=190)m='<b>Whole of Soho.</b> About 190, fire and all.';else m='<b>Whole of City.</b> Up to 240 across both floors.';s.innerHTML=m};r.oninput=f;f()}
 })();
-</script><script>
-/* Static preview only: GitHub Pages can't receive POSTs, so fake the send there. On the live (Laravel) site this does nothing. */
-if(/github\.io$/.test(location.hostname)){document.querySelectorAll('form[data-form-submit]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('[data-form-submit-btn]');if(b)b.textContent='Thanks, we\'ll be in touch ✓';})})}
-</script>
+</script><script src="assets/forms.js"></script>
 </body>
 </html>
