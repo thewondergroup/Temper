@@ -26,8 +26,15 @@ function respond(int $status, bool $ok, string $message): never
 
 function settings(): array
 {
-    $file = getenv('TEMPER_FORMS_ENV') ?: dirname(__DIR__, 2) . '/temper-forms.env';
-    $lines = @is_readable($file) ? file($file, FILE_IGNORE_NEW_LINES) : false;
+    // Above the web root: two levels up for the live site, three for a test copy in a sub-folder.
+    $candidates = array_filter([getenv('TEMPER_FORMS_ENV'), dirname(__DIR__, 2) . '/temper-forms.env', dirname(__DIR__, 3) . '/temper-forms.env']);
+    $lines = false;
+    foreach ($candidates as $file) {
+        if (@is_readable($file)) {
+            $lines = file($file, FILE_IGNORE_NEW_LINES);
+            break;
+        }
+    }
     if ($lines === false) {
         error_log('temper forms: settings file not found or not readable');
         respond(500, false, FALLBACK_MESSAGE);

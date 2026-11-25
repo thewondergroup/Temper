@@ -1,0 +1,84 @@
+# temper static site on Hostinger (Apache / LiteSpeed)
+AddHandler application/x-httpd-php84 .php
+
+Options -Indexes -MultiViews
+DirectorySlash Off
+ErrorDocument 404 /404.html
+
+# Never serve settings files
+<FilesMatch "(^\.ht|\.(env|example)$)">
+    Require all denied
+</FilesMatch>
+
+# Keep test copies (test.temperrestaurant.com) out of search engines
+<IfModule mod_headers.c>
+    <IfModule mod_setenvif.c>
+        SetEnvIfNoCase Host "^test\." NOINDEX
+        Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX
+    </IfModule>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # One host: no www
+    RewriteCond %{HTTP_HOST} ^www\.temperrestaurant\.com$ [NC]
+    RewriteRule ^(.*)$ https://temperrestaurant.com/$1 [R=301,L]
+
+    # ---- Redirects carried over from the previous site ----
+    # Closed venues
+    RewriteRule ^temper-covent-garden(/.*)?$ /temper-soho [R=301,L]
+    RewriteRule ^temper-shoreditch-bar/?$ /temper-city [R=301,L]
+    RewriteRule ^(temper-paddington|temper-shoreditch)/?$ / [R=301,L]
+    # Utility pages
+    RewriteRule ^contact/?$ /contact-us [R=301,L]
+    RewriteRule ^(reservations|book|our-restaurants?)/?$ /book-now [R=301,L]
+    RewriteRule ^(events|party-reservations)/?$ /private-hire [R=301,L]
+    RewriteRule ^careers/?$ /contact-us [R=301,L]
+    RewriteRule ^menu/?$ /temper-soho/menu [R=301,L]
+    RewriteRule ^privacy-policy-2/?$ /privacy-policy [R=301,L]
+    # Offers and seasonal pages
+    RewriteRule ^(half-price-steaks|christmas(-opening-hours)?)/?$ /whats-on [R=301,L]
+    RewriteRule ^whats-on/[23]/?$ /whats-on [R=301,L]
+    RewriteRule ^(bbq-bottomless-brunch|bottomless-brunch-soho(-covent-garden)?|bottomless-brunch-dev)/?$ /bottomless-brunch [R=301,L]
+    RewriteRule ^(sunday-feasts|whole-beast-board|bottomless-sundays|sunday-roast-new)/?$ /sunday-roast [R=301,L]
+    RewriteRule ^taco-tuesday-dev/?$ /taco-tuesday [R=301,L]
+    RewriteRule ^monday-lunch-at-temper-city/?$ /temper-city [R=301,L]
+    RewriteRule ^(pre-theatre-menu|12-burgers-fries-24-95-steak-frites)/?$ /temper-soho/menu [R=301,L]
+    RewriteRule ^sourcing-the-best/?$ /our-meat [R=301,L]
+    RewriteRule ^(order-temper-restaurant-boxes-at-home|world-cup|temper-burger|temper-competition|author/dev99)/?$ / [R=301,L]
+    # Old WordPress leftovers
+    RewriteRule ^portfolio(/.*)?$ / [R=301,L]
+    RewriteRule ^(feed|category/blog|category/uncategorized)/?$ /blog [R=301,L]
+    RewriteRule ^wp-content/uploads/(2018|2020|2021|2022|2023|2024)/.*\.pdf$ /temper-soho/menu [R=301,L]
+    # Retired blog posts
+    RewriteRule ^(blog/)?(looking-for-the-best-central-london-restaurants-temper-brings-the-heat|temper-one-of-the-best-restaurants-in-london-for-fire-flavour-and-feast)/?$ / [R=301,L]
+    RewriteRule ^(blog/)?one-of-the-most-talked-about-restaurants-in-london-welcome-to-temper/?$ /who-we-are [R=301,L]
+    RewriteRule ^(private-dining-in-london-that-brings-the-fire-only-at-temper|where-to-host-the-ultimate-birthday-dinner-in-london-right-here-at-temper)/?$ /private-hire [R=301,L]
+    # Blog posts that used to live at the top level
+    RewriteRule ^(group-dining-in-london-just-got-serious-fire-feasting-full-flavour-at-temper|the-best-lunch-in-london-fired-up-at-temper|hunting-for-the-best-steak-in-london-follow-the-fire-to-temper|the-best-food-in-london-its-all-about-the-fire-at-temper|late-night-restaurants-in-london-that-actually-deliver-temper-is-on-fire-after-dark)/?$ /blog/$1 [R=301,L]
+
+    # ---- Pages that moved in the new site ----
+    RewriteRule ^bar-bq-crabshack(\.html)?/?$ /bbq [R=301,L]
+    RewriteRule ^temper-soho-menu(\.html)?/?$ /temper-soho/menu [R=301,L]
+    RewriteRule ^temper-city-menu(\.html)?/?$ /temper-city/menu [R=301,L]
+
+    # ---- Not on the new site (temporary redirects, so they can be restored) ----
+    RewriteRule ^cheap-eats/?$ /temper-soho [R=302,L]
+    RewriteRule ^(shop|products|customer)(/.*)?$ / [R=302,L]
+
+    # ---- Clean addresses ----
+    # /index and /page.html go to the clean address
+    RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index(?:\.html)?[\s?] [NC]
+    RewriteRule ^ /%1 [R=301,L]
+    RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.html[\s?] [NC]
+    RewriteCond %1 !^404$
+    RewriteRule ^ /%1 [R=301,L]
+    # No trailing slash on pages
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^(.+?)/+$ /$1 [R=301,L]
+    # Serve page.html for /page
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^(.+)$ $1.html [L]
+</IfModule>

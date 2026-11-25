@@ -10,7 +10,10 @@
       captcha = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
         s.src = 'https://www.google.com/recaptcha/api.js?render=' + encodeURIComponent(key);
-        s.onload = function () { grecaptcha.ready(resolve); };
+        s.onload = function () {
+          if (window.grecaptcha) grecaptcha.ready(resolve);
+          else { captcha = null; s.remove(); reject(new Error('recaptcha')); }
+        };
         s.onerror = function () { captcha = null; s.remove(); reject(new Error('recaptcha')); };
         document.head.appendChild(s);
       });

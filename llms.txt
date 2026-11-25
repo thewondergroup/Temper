@@ -13,13 +13,13 @@
 - Hours: Soho Mon 12–21.00, Tue–Sat 12–22.15, Sun 12–18.15. City Mon–Fri 12–22.15, Sat 12–16.00, closed Sun.
 
 ## Pages
-- [Home](https://thewondergroup.github.io/Temper/)
-- [temper Soho](https://thewondergroup.github.io/Temper/temper-soho) · [Soho menu](https://thewondergroup.github.io/Temper/temper-soho/menu)
-- [temper City](https://thewondergroup.github.io/Temper/temper-city) · [City menu](https://thewondergroup.github.io/Temper/temper-city/menu)
-- [Sunday Roast](https://thewondergroup.github.io/Temper/sunday-roast)
-- [Bottomless Brunch](https://thewondergroup.github.io/Temper/bottomless-brunch) · [Lobster & Steak Bottomless Brunch](https://thewondergroup.github.io/Temper/lobster-steak-bottomless-brunch)
-- [Taco Tuesday](https://thewondergroup.github.io/Temper/taco-tuesday)
-- [Butchery masterclass](https://thewondergroup.github.io/Temper/butchery-and-barbecue-masterclasses)
-- [Feast menus](https://thewondergroup.github.io/Temper/feast-soho) · [Private hire](https://thewondergroup.github.io/Temper/private-hire)
-- [Our meat](https://thewondergroup.github.io/Temper/our-meat) · [About](https://thewondergroup.github.io/Temper/who-we-are) · [Contact](https://thewondergroup.github.io/Temper/contact-us)
-- [Bar-B-Q & Crabshack](https://thewondergroup.github.io/Temper/bbq) · [Covent Garden](https://thewondergroup.github.io/Temper/bar-bq-crabshack-covent-garden) · [King's Road](https://thewondergroup.github.io/Temper/bar-bq-crabshack-kings-road) · [Crabshack menu](https://thewondergroup.github.io/Temper/bar-bq-crabshack-menu)
+- [Home](https://temperrestaurant.com/)
+- [temper Soho](https://temperrestaurant.com/temper-soho) · [Soho menu](https://temperrestaurant.com/temper-soho/menu)
+- [temper City](https://temperrestaurant.com/temper-city) · [City menu](https://temperrestaurant.com/temper-city/menu)
+- [Sunday Roast](https://temperrestaurant.com/sunday-roast)
+- [Bottomless Brunch](https://temperrestaurant.com/bottomless-brunch) · [Lobster & Steak Bottomless Brunch](https://temperrestaurant.com/lobster-steak-bottomless-brunch)
+- [Taco Tuesday](https://temperrestaurant.com/taco-tuesday)
+- [Butchery masterclass](https://temperrestaurant.com/butchery-and-barbecue-masterclasses)
+- [Feast menus](https://temperrestaurant.com/feast-soho) · [Private hire](https://temperrestaurant.com/private-hire)
+- [Our meat](https://temperrestaurant.com/our-meat) · [About](https://temperrestaurant.com/who-we-are) · [Contact](https://temperrestaurant.com/contact-us)
+- [Bar-B-Q & Crabshack](https://temperrestaurant.com/bbq) · [Covent Garden](https://temperrestaurant.com/bar-bq-crabshack-covent-garden) · [King's Road](https://temperrestaurant.com/bar-bq-crabshack-kings-road) · [Crabshack menu](https://temperrestaurant.com/bar-bq-crabshack-menu)

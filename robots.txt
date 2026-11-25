@@ -11,4 +11,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://thewondergroup.github.io/Temper/sitemap.xml
+Sitemap: https://temperrestaurant.com/sitemap.xml
