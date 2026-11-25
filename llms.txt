@@ -1,6 +1,6 @@
 # temper
 
-> temper is a London open-fire steakhouse group: temper Soho (25 Broadwick Street, W1F 0DF, since 2016), temper City (2 Angel Court, EC2R 7HJ, near Bank) and temper Bar-B-Q & Crabshack (Covent Garden and King's Road, opening soon). Rare-breed British beef from one farm in North Yorkshire, whole animals butchered and dry-aged in-house (60 days average), cooked over wood and charcoal. Named one of the world's 101 best steakhouses. Tagline: Meat. Fire. Tacos.
+> temper is a London open-fire steakhouse group: temper Soho (25 Broadwick Street, W1F 0DF, since 2016), temper City (2 Angel Court, EC2R 7HJ, near Bank) and temper Bar-B-Q & Crabshack (Covent Garden, 12 Maiden Lane, now taking bookings at https://www.opentable.com/r/temper-bbq-and-crabshack-covent-garden-london; King's Road opening later). Rare-breed British beef from one farm in North Yorkshire, whole animals butchered and dry-aged in-house (60 days average), cooked over wood and charcoal. Named one of the world's 101 best steakhouses. Tagline: Meat. Fire. Tacos.
 
 ## Key facts
 - Sunday Roast (Soho only, Sundays from noon): from £29.90; Three Beast Feast £38.50pp for two; bottomless roast £55. Named best Sunday roast in London by Time Out. Usually sells out by Friday.
