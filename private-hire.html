@@ -36,6 +36,7 @@
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&amp;display=swap" rel="stylesheet" />
 <style>@media(max-width:700px){.footer__base>*:first-child{display:block!important}.wonder-credit{display:block!important;margin:8px 0 0!important}}</style>
+<style>input[type=date]{color-scheme:dark;cursor:pointer}input[type=date]::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.85;filter:invert(48%) sepia(80%) saturate(2400%) hue-rotate(350deg)}</style>
 </head>
 <body>
 
@@ -154,5 +155,6 @@ const cd=document.querySelector('.count');if(cd){const tick=()=>{const n=new Dat
 const pk=document.querySelector('.picker');if(pk){const r=pk.querySelector('input'),o=pk.querySelector('output'),s=pk.querySelector('.sug');const f=()=>{const v=+r.value;o.textContent=v;let m;if(v<=8)m='<b>Book online.</b> Up to eight goes straight through OpenTable.';else if(v<=20)m='<b>Soho private dining room.</b> Behind the curtain, seats 20. Or a long table at City.';else if(v<=50)m='<b>City mezzanine.</b> Seats 50 with its own bar and staircase.';else if(v<=70)m='<b>City mezzanine, standing.</b> Seventy with the bar running.';else if(v<=190)m='<b>Whole of Soho.</b> About 190, fire and all.';else m='<b>Whole of City.</b> Up to 240 across both floors.';s.innerHTML=m};r.oninput=f;f()}
 })();
 </script><script src="assets/forms.js"></script>
+<script>document.querySelectorAll('input[type=date]').forEach(function(i){if(!i.min)i.min=new Date().toISOString().slice(0,10);i.addEventListener('click',function(){try{i.showPicker()}catch(e){}})})</script>
 </body>
 </html>
