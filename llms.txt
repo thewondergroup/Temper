@@ -14,8 +14,8 @@
 
 ## Pages
 - [Home](https://thewondergroup.github.io/Temper/)
-- [temper Soho](https://thewondergroup.github.io/Temper/temper-soho) · [Soho menu](https://thewondergroup.github.io/Temper/temper-soho-menu)
-- [temper City](https://thewondergroup.github.io/Temper/temper-city) · [City menu](https://thewondergroup.github.io/Temper/temper-city-menu)
+- [temper Soho](https://thewondergroup.github.io/Temper/temper-soho) · [Soho menu](https://thewondergroup.github.io/Temper/temper-soho/menu)
+- [temper City](https://thewondergroup.github.io/Temper/temper-city) · [City menu](https://thewondergroup.github.io/Temper/temper-city/menu)
 - [Sunday Roast](https://thewondergroup.github.io/Temper/sunday-roast)
 - [Bottomless Brunch](https://thewondergroup.github.io/Temper/bottomless-brunch) · [Lobster & Steak Bottomless Brunch](https://thewondergroup.github.io/Temper/lobster-steak-bottomless-brunch)
 - [Taco Tuesday](https://thewondergroup.github.io/Temper/taco-tuesday)
