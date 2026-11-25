@@ -22,4 +22,4 @@
 - [Butchery masterclass](https://thewondergroup.github.io/Temper/butchery-and-barbecue-masterclasses)
 - [Feast menus](https://thewondergroup.github.io/Temper/feast-soho) · [Private hire](https://thewondergroup.github.io/Temper/private-hire)
 - [Our meat](https://thewondergroup.github.io/Temper/our-meat) · [About](https://thewondergroup.github.io/Temper/who-we-are) · [Contact](https://thewondergroup.github.io/Temper/contact-us)
-- [Bar-B-Q & Crabshack](https://thewondergroup.github.io/Temper/bar-bq-crabshack) · [Covent Garden](https://thewondergroup.github.io/Temper/bar-bq-crabshack-covent-garden) · [King's Road](https://thewondergroup.github.io/Temper/bar-bq-crabshack-kings-road) · [Crabshack menu](https://thewondergroup.github.io/Temper/bar-bq-crabshack-menu)
+- [Bar-B-Q & Crabshack](https://thewondergroup.github.io/Temper/bbq) · [Covent Garden](https://thewondergroup.github.io/Temper/bar-bq-crabshack-covent-garden) · [King's Road](https://thewondergroup.github.io/Temper/bar-bq-crabshack-kings-road) · [Crabshack menu](https://thewondergroup.github.io/Temper/bar-bq-crabshack-menu)
