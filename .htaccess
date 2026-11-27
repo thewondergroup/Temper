@@ -60,11 +60,12 @@ ErrorDocument 404 /404.html
     RewriteRule ^(group-dining-in-london-just-got-serious-fire-feasting-full-flavour-at-temper|the-best-lunch-in-london-fired-up-at-temper|hunting-for-the-best-steak-in-london-follow-the-fire-to-temper|the-best-food-in-london-its-all-about-the-fire-at-temper|late-night-restaurants-in-london-that-actually-deliver-temper-is-on-fire-after-dark)/?$ /blog/$1 [R=301,L]
 
     # ---- Pages that moved in the new site ----
-    RewriteRule ^bar-bq-crabshack(\.html)?/?$ /bbq [R=301,L]
     RewriteRule ^temper-soho-menu(\.html)?/?$ /temper-soho/menu [R=301,L]
     RewriteRule ^temper-city-menu(\.html)?/?$ /temper-city/menu [R=301,L]
 
     # ---- Not on the new site (temporary redirects, so they can be restored) ----
+    RewriteRule ^(bbq|bar-bq-crabshack[a-z-]*|fonts)(\.html)?(/.*)?$ / [R=302,L]
+    RewriteRule ^assets/(cs-[^/]+|temper-crabshack-menu\.pdf)(/.*)?$ / [R=302,L]
     RewriteRule ^cheap-eats/?$ /temper-soho [R=302,L]
     RewriteRule ^(shop|products|customer)(/.*)?$ / [R=302,L]
 
