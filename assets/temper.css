@@ -424,7 +424,6 @@ video.vid{width:100%;height:100%;object-fit:cover;object-position:var(--pos,cent
   .tile__meta{font-size:10px;margin-bottom:8px}
   .hero__scroll{display:none}
 }
-/* crabshack on the temper homepage */
 .cs-home{background:radial-gradient(800px 500px at 90% 10%,rgba(242,193,78,.08),transparent 60%),var(--char);padding-bottom:0}
 .cs-home__img{position:relative;display:block;aspect-ratio:4/5;overflow:hidden}
 .cs-home__img>img:first-child{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
